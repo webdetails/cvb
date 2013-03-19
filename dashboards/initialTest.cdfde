@@ -142,6 +142,11 @@
       "type": "Id"
      },
      {
+      "name": "title",
+      "value": "Title",
+      "type": "Parameter"
+     },
+     {
       "name": "listeners",
       "value": "[]",
       "type": "Listeners"
@@ -177,11 +182,6 @@
       "type": "Integer"
      },
      {
-      "name": "title",
-      "value": "Title",
-      "type": "Parameter"
-     },
-     {
       "name": "cccColors",
       "value": "[]",
       "type": "Array"
@@ -202,12 +202,12 @@
       "type": "JavaScript"
      },
      {
-      "name": "postFetch",
+      "name": "postExecution",
       "value": "",
       "type": "JavaScript"
      },
      {
-      "name": "postExecution",
+      "name": "postFetch",
       "value": "",
       "type": "JavaScript"
      },
@@ -450,6 +450,11 @@
       "name": "cccIsMultiValued",
       "value": false,
       "type": "Boolean"
+     },
+     {
+      "name": "cccLeafContentOverflow",
+      "value": "auto",
+      "type": "cccLeafContentOverflowCustom"
      },
      {
       "name": "cccMargins",
@@ -752,6 +757,11 @@
       "type": "String"
      },
      {
+      "name": "cccValuesMask",
+      "value": "",
+      "type": "String"
+     },
+     {
       "name": "cccValuesVisible",
       "value": false,
       "type": "Boolean"
@@ -791,13 +801,13 @@
       "type": "Id"
      },
      {
-      "name": "language",
-      "value": "beanshell",
+      "name": "initscript",
+      "value": "",
       "type": "String"
      },
      {
-      "name": "initscript",
-      "value": "",
+      "name": "language",
+      "value": "beanshell",
       "type": "String"
      },
      {
@@ -849,5 +859,5 @@
    }
   ]
  },
- "filename": "/cvb/initialTest.cdfde"
+ "filename": "/system/cvb/dashboards/initialTest.cdfde"
 }
