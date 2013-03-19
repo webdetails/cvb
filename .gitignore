@@ -1,0 +1,8 @@
+.DS_Store
+nbproject/private/
+bin/
+dist/
+build/
+/lib/
+runtime-lib/
+override.properties
