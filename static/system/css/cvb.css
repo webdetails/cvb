@@ -1,0 +1,275 @@
+/* This Source Code Form is subject to the terms of the Mozilla Public
+ * License, v. 2.0. If a copy of the MPL was not distributed with this file,
+ * You can obtain one at http://mozilla.org/MPL/2.0/. */
+
+
+/*
+ * WDStyleGuide Template CSS  
+ *
+ * Use this as a template to format the styles of specific projects. Most of 
+ * the most commonly used classes/rules are already written here. The file is
+ * divided in the following sections:
+ *
+ *    Fonts
+ *    Style Resets
+ *    1. BACKGROUND 
+ *    2. HEADER 
+ *    3. FILTER CELLS
+ *    4. DATA CELLS
+ *    5. TABLES
+ *    6. CHARTS 
+ *    7. SELECTORS AND BUTTONS 
+ *    Other 
+ *    Project Specific Items  
+ *
+*/
+
+
+/* =============================================================================
+   Fonts
+   ========================================================================== */
+
+/* =============================================================================
+   Style Resets
+   ========================================================================== */
+
+/* =============================================================================
+   1. BACKGROUND 
+   ========================================================================== */
+
+/* =============================================================================
+   2. HEADER 
+   ========================================================================== */
+
+/* =============================================================================
+   3. FILTER CELLS
+   ========================================================================== */
+
+.WDfilterCell {
+	margin-top:20px;
+}
+
+.WDfilterCellHeader {
+    font-size: 20px;
+}
+
+/* Global filter */
+.WDfilterCellBody {
+    background-color: #FCFDFD;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0, #E9EEF0), color-stop(0.5, white));
+    background-image: -webkit-linear-gradient(center bottom, #E9EEF0 0%, white 50%);
+    background-image: -moz-linear-gradient(center bottom, #E9EEF0 0%, white 50%);
+    background-image: -o-linear-gradient(top, #E9EEF0 0%,#FCFDFD 50%);
+    background-image: -ms-linear-gradient(top, #E9EEF0 0%,#FCFDFD 50%);
+    background-image: linear-gradient(top, #E9EEF0 0%,#FCFDFD 50%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#E9EEF0', endColorstr='#FCFDFD',GradientType=0 );
+    border: 1px solid #839298;
+    margin-left: -1px;
+    margin-right: -1px;
+    border-radius: 5px;
+		min-height: 30px;
+    margin-bottom: 20px;
+}
+
+.WDfilterCellBody input[type="text"]:focus, 
+.WDfilterCellBody input[type="password"]:focus, 
+.WDfilterCellBody input.text:focus, 
+.WDfilterCellBody input.title:focus, 
+.WDfilterCellBody textarea:focus {
+    border: 1px solid #006CD8;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.WDfilterCellBody input[type="text"] {
+	font-family: 'Trebuchet MS',Arial,Sans;
+	font-size: 12px;
+	height: 18px;
+	line-height: 18px;
+	width: 100%;
+	margin-left: 5px;
+	margin-top: 4px;
+	text-indent: 5px;
+	border-radius: 4px 4px 4px 4px;
+}
+
+.WDfilterCellBody button {
+	background: #ffffff;
+	background: -moz-linear-gradient(top, #ffffff 0%, #839298 250%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ffffff), color-stop(250%,#839298));
+	background: -webkit-linear-gradient(top, #ffffff 0%,#839298 250%);
+	background: -o-linear-gradient(top, #ffffff 0%,#839298 250%);
+	background: -ms-linear-gradient(top, #ffffff 0%,#839298 250%);
+	background: linear-gradient(top, #ffffff 0%,#839298 250%);
+	border-radius: 4px 4px 4px 4px;
+	-moz-border-radius: 4px 4px 4px 4px;
+	-webkit-border-radius: 4px 4px 4px 4px;
+	border: 1px solid #839298;
+	height: 22px;
+	line-height: 22px;
+	margin-top: 4px;
+	font-size: 10px;
+	color: #000;
+	font-weight: normal;
+	width: 84%;
+	cursor:default;
+
+	padding:0px;
+}
+
+.WDfilterCellBody button:hover {
+	border-color: #006cd8;
+	cursor: pointer;
+}
+
+.WDfilterCellBody .disabled button,
+.WDfilterCellBody .disabled button:hover {
+	color:#999;
+	border-color: #839298;
+	cursor: default;
+}
+
+.WDfilterCellBody .selectorLocalLabel {
+    font-size: 9px;
+    font-weight: normal;
+    text-indent: 15px;
+    line-height: 27px; 
+}
+
+
+/* =============================================================================
+   4. DATA CELLS
+   ========================================================================== */
+
+
+
+
+
+
+.WDdataCell {
+    background-color: #fff;
+    margin-bottom: 30px;
+    margin-left: -1px;
+    margin-right: -1px;
+    padding: 10px 0px 10px 0px;
+    border: 0px;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px; 
+    -moz-box-shadow: 2px 2px 2px #ccc;
+    -webkit-box-shadow: 2px 2px 2px #ccc;
+    box-shadow: 2px 2px 2px #ccc;
+}
+
+
+
+/* =============================================================================
+   5. TABLES
+   ========================================================================== */
+
+.WDdataCellBody .dataTables_wrapper {
+    min-height: 0px;
+    padding:10px;
+}
+
+.WDdataCellBody tr {
+    text-align: left;
+        height: 30px;
+}
+.WDdataCellBody tbody tr.odd,
+.WDdataCellBody tbody tr.even {
+    background-color: transparent;
+    font-size: 11px;
+    font-weight: normal;
+}
+
+.WDdataCellBody tbody tr:hover {
+	cursor: pointer;
+	background: #57A32B;
+}
+.WDdataCellBody tbody tr:hover .dataTables_empty {
+	background: #FFFFFF;
+	cursor: default;
+}
+
+
+.WDdataCellBody thead th,
+.WDdataCellBody tr.odd td,
+.WDdataCellBody tr.even td,
+.WDdataCellBody tr.odd td.sorting_1,
+.WDdataCellBody tr.even td.sorting_1 {
+    background: none;
+    border-bottom: 1px solid #ccd8dd;
+    border-top: 1px solid transparent;
+}
+
+.WDdataCellBody .column0 {
+	padding-left:5px;
+}
+
+.WDdataCellBody th.column3,
+.WDdataCellBody td.column3 {
+	padding-right: 10px;
+}
+
+.WDdataCellBody thead th:not(.sorting_disabled) {
+    cursor: pointer;
+}
+
+.WDdataCellBody thead th {
+    background-color: transparent;
+    font-size: 9px;
+    font-weight: bold;
+    padding: 0;
+    text-align: left;  
+ }
+
+/* sorting */
+
+.WDdataCellBody th.sorting:hover,
+.WDdataCellBody th.sorting_asc:hover,
+.WDdataCellBody th.sorting_desc:hover{
+	color: #006CD8;
+}
+
+.WDdataCellBody th.sorting_asc,
+.WDdataCellBody th.sorting_desc{
+	color: #006CD8;
+}
+
+
+.WDdataCellBody td,
+.WDdataCellBody td.string,
+.WDdataCellBody td.numeric {
+    font-size: 10px;
+    font-weight: normal;
+}
+
+
+/* =============================================================================
+   6. CHARTS 
+   ========================================================================== */
+
+/* =============================================================================
+   7. SELECTORS AND BUTTONS 
+   ========================================================================== */
+
+
+
+
+/* =============================================================================
+   Other 
+   ========================================================================== */
+
+
+/* =============================================================================
+   Project Specific Items 
+   ========================================================================== */
+
+
+
+
+
+
+
+
+

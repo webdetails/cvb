@@ -78,7 +78,7 @@ body{
    ========================================================================== */
 .cpkHeader {
     height: 70px;
-    background: url(img/cpkHeaderBackground.png) no-repeat scroll center 36px;
+    background: url(../img/cpkHeaderBackground.png) no-repeat scroll center 36px;
     z-index: 100;
 
     margin-right:auto;
@@ -95,7 +95,7 @@ body{
 }
 
 .cpkLogo {
-    background: url('img/pluginLogo.png') no-repeat right bottom;
+    background: url(../img/pluginLogo.png) no-repeat right bottom;
     height: 15px;
     margin-top: 50px;
     display:inline-block;
@@ -148,6 +148,7 @@ body{
     width:950px;
     margin-left:auto;
     margin-right:auto;
+    height:34px;
 }
 
 
