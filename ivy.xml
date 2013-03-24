@@ -39,6 +39,8 @@
                 
     <dependency org="pentaho" name="cpf"
 			rev="TRUNK-SNAPSHOT" transitive="false" changing="true" conf='default->default'/>                   
+	<dependency org="org.codehaus.jackson" name="jackson-core-asl" rev="1.9.12" conf='default->default' />
+	<dependency org="org.codehaus.jackson" name="jackson-mapper-asl" rev="1.9.12" conf='default->default' />
                 
 <!--    <dependency org="pentaho" name="cpf" rev="TRUNK-SNAPSHOT" changing="true"/>-->
 
