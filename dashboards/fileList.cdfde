@@ -453,6 +453,225 @@
     ]
    },
    {
+    "id": "dafb0527-ba77-418e-44cf-5f8f464ec6fd",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "44e25ae5-d6e9-0c7e-c131-46b43682eb86",
+    "properties": [
+     {
+      "name": "name",
+      "value": "backButtonObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDbuttonContainer",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "df8efee1-909c-23ba-1246-788323233ee4",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "44e25ae5-d6e9-0c7e-c131-46b43682eb86",
+    "properties": [
+     {
+      "name": "name",
+      "value": "forwardButtonObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDbuttonContainer",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "0a96be09-5db1-548d-e6ab-48fefa66fd4a",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "44e25ae5-d6e9-0c7e-c131-46b43682eb86",
+    "properties": [
+     {
+      "name": "name",
+      "value": "refreshButtonObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDbuttonContainer",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "78debb4f-7fbe-90f4-922d-84edaf9d9965",
     "type": "LayoutColumn",
     "typeDesc": "Column",
@@ -571,226 +790,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "18",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "0a96be09-5db1-548d-e6ab-48fefa66fd4a",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "44e25ae5-d6e9-0c7e-c131-46b43682eb86",
-    "properties": [
-     {
-      "name": "name",
-      "value": "applyButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "3",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "dafb0527-ba77-418e-44cf-5f8f464ec6fd",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "44e25ae5-d6e9-0c7e-c131-46b43682eb86",
-    "properties": [
-     {
-      "name": "name",
-      "value": "backButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "1",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "df8efee1-909c-23ba-1246-788323233ee4",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "44e25ae5-d6e9-0c7e-c131-46b43682eb86",
-    "properties": [
-     {
-      "name": "name",
-      "value": "forwardButtonObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "1",
+      "value": "20",
       "type": "Integer"
      },
      {
@@ -1274,7 +1274,7 @@
      },
      {
       "name": "postExecution",
-      "value": "",
+      "value": "function f(){\n    $('#' + this.name).unbind('change');\n}",
       "type": "JavaScript"
      },
      {
@@ -1284,7 +1284,7 @@
      },
      {
       "name": "postChange",
-      "value": "",
+      "value": "function f(){\n    var history = Dashboards.getParameterValue('${p:historyParam}'),\n        idx = Dashboards.getParameterValue('${p:indexParam}'),\n        newUrl = Dashboards.getParameterValue( '${p:urlParam}' );\n    history = history.slice(0, idx+1);\n    history.push(newUrl);\n            \n    Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n    Dashboards.setParameter( '${p:historyParam}' , history );\n    Dashboards.fireChange( '${p:updateEvent}', '1');\n}",
       "type": "JavaScript"
      },
      {
@@ -1316,12 +1316,12 @@
     "properties": [
      {
       "name": "name",
-      "value": "applyButton",
+      "value": "refreshButton",
       "type": "Id"
      },
      {
       "name": "label",
-      "value": "Apply",
+      "value": "R",
       "type": "String"
      },
      {
@@ -1331,7 +1331,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    var history = Dashboards.getParameterValue('${p:historyParam}'),\n        idx = Dashboards.getParameterValue('${p:indexParam}'),\n        newUrl = Dashboards.getComponentByName('${c:selectUrl}').getValue();\n    \n    history = history.slice(0,idx+1);\n    history.push(newUrl);\n    \n    Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n    Dashboards.setParameter( '${p:historyParam}' , history );\n    Dashboards.setParameter( '${p:urlParam}' , newUrl );\n    Dashboards.fireChange( '${p:updateEvent}', '1');\n}\n\n",
+      "value": "function f(){\n    Dashboards.fireChange( '${p:updateEvent}', '1');\n}\n\n",
       "type": "JavaScript"
      },
      {
@@ -1351,7 +1351,7 @@
      },
      {
       "name": "htmlObject",
-      "value": "${p:applyButtonObj}",
+      "value": "refreshButtonObj",
       "type": "HtmlObject"
      },
      {
@@ -1569,11 +1569,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colSortable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
       "name": "expandParameters",
       "value": "[]",
       "type": "ValuesArray"
@@ -1590,7 +1585,7 @@
      },
      {
       "name": "colTypes",
-      "value": "[\"formattedText\",\"formattedText\",\"formattedText\",\"numeric\",\"hyperlink\"]",
+      "value": "[\"selectiveRowClick\",\"formattedText\",\"formattedText\",\"numeric\",\"hyperlink\"]",
       "type": "colTypesCustom"
      },
      {
@@ -1604,9 +1599,9 @@
       "type": "Array"
      },
      {
-      "name": "lengthChange",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colSortable",
+      "value": "[]",
+      "type": "Array"
      },
      {
       "name": "expandOnClick",
@@ -1639,6 +1634,11 @@
       "type": "Integer"
      },
      {
+      "name": "lengthChange",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -1654,14 +1654,14 @@
       "value": "filesQuery"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
@@ -1755,7 +1755,7 @@
     ]
    },
    {
-    "id": "b4521daa-6028-3d97-b16c-bf187a2f2669",
+    "id": "10d9450b-12e5-d70a-3eb0-af2402255bdf",
     "type": "ComponentsFunction",
     "typeDesc": "Function",
     "parent": "SCRIPT",
@@ -1768,6 +1768,24 @@
      {
       "name": "javaScript",
       "value": "Dashboards.on('cdf:preInit' , function (){\n    var first = Dashboards.getParameterValue('${p:urlParam}');\n    \n    Dashboards.setParameter('${p:historyParam}', [ first ] );\n    Dashboards.setParameter('${p:indexParam}' , 0 );\n});",
+      "type": "JavaScript"
+     }
+    ]
+   },
+   {
+    "id": "b4521daa-6028-3d97-b16c-bf187a2f2669",
+    "type": "ComponentsFunction",
+    "typeDesc": "Function",
+    "parent": "SCRIPT",
+    "properties": [
+     {
+      "name": "name",
+      "value": "selectiveClickAddInTest",
+      "type": "Id"
+     },
+     {
+      "name": "javaScript",
+      "value": "Dashboards.registerAddIn(\"Table\", \"colType\", new AddIn({\n    name: \"selectiveRowClick\",\n    label: \"Selective Row Click\",\n    defaults: {\n      expand: function (st) {\n        return true;\n      },\n      click: function (st) {\n        return true; \n      },\n      table: undefined,\n      valueFormat: function(v,format,st) {\n          return sprintf(format || \"%s\",v);\n      }\n    },\n\n    init: function(){\n      $.fn.dataTableExt.oSort[this.name+'-asc']  = $.fn.dataTableExt.oSort['string-asc'];\n      $.fn.dataTableExt.oSort[this.name+'-desc']  = $.fn.dataTableExt.oSort['string-desc'];\n    },\n    \n    implementation: function(tgt, st, opt){\n        if (opt.table){\n            var myself = opt.table,\n                cd = myself.chartDefinition;\n            if (myself.expandOnClick) {\n                myself.handleExpandOnClick(st);\n            }\n            if (cd.clickAction){\n\t            cd.clickAction.call(myself,st);\n            }\n        \n        }\n\n        Dashboards.log('Testing stuff');\n      \n    }\n    \n}));",
       "type": "JavaScript"
      }
     ]
