@@ -1071,6 +1071,261 @@
       "type": "String"
      }
     ]
+   },
+   {
+    "id": "e27564fd-bb92-20d0-a0ac-4832083b246c",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "UnIqEiD",
+    "properties": [
+     {
+      "name": "name",
+      "value": "hiddenElements",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDhidden",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "d945d3b5-d553-5aa7-703a-e681b8e1c973",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "e27564fd-bb92-20d0-a0ac-4832083b246c",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "701cd087-0f1e-22d4-3e43-71cddce44274",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "d945d3b5-d553-5aa7-703a-e681b8e1c973",
+    "properties": [
+     {
+      "name": "name",
+      "value": "expandTableContainer",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "35d9b0c9-85e2-e466-5201-94c451229876",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "701cd087-0f1e-22d4-3e43-71cddce44274",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "cc1b1c1c-7fd4-cda1-067f-360518697fb2",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
+    "parent": "35d9b0c9-85e2-e466-5201-94c451229876",
+    "properties": [
+     {
+      "name": "name",
+      "value": "",
+      "type": "Id"
+     },
+     {
+      "name": "html",
+      "value": "<h1>PH</h1> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "color",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
    }
   ]
  },
@@ -1555,7 +1810,7 @@
      },
      {
       "name": "expandContainerObject",
-      "value": "",
+      "value": "${h:expandTableContainer}",
       "type": "String"
      },
      {
@@ -1569,23 +1824,13 @@
       "type": "JavaScript"
      },
      {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
-     },
-     {
-      "name": "xActionArrayParameter",
-      "value": "[[\"urlParam\",\"urlParam\"]]",
-      "type": "ValuesArray"
-     },
-     {
       "name": "colHeaders",
       "value": "[\"Name\",\"Type\",\"Date Modified\",\"Size (bytes)\",\"Download Link\"]",
       "type": "Array"
      },
      {
       "name": "colTypes",
-      "value": "[\"selectiveRowClick\",\"formattedText\",\"formattedText\",\"numeric\",\"hyperlink\"]",
+      "value": "[\"formattedText\",\"formattedText\",\"formattedText\",\"numeric\",\"hyperlink\"]",
       "type": "colTypesCustom"
      },
      {
@@ -1604,14 +1849,14 @@
       "type": "Array"
      },
      {
-      "name": "expandOnClick",
-      "value": "false",
-      "type": "Boolean"
+      "name": "expandParameters",
+      "value": "[]",
+      "type": "ValuesArray"
      },
      {
-      "name": "paginate",
-      "value": "false",
-      "type": "Boolean"
+      "name": "xActionArrayParameter",
+      "value": "[[\"urlParam\",\"urlParam\"]]",
+      "type": "ValuesArray"
      },
      {
       "name": "filter",
@@ -1635,6 +1880,16 @@
      },
      {
       "name": "lengthChange",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "expandOnClick",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "paginate",
       "value": "false",
       "type": "Boolean"
      },
@@ -1700,7 +1955,7 @@
      },
      {
       "name": "preExecution",
-      "value": "",
+      "value": "function f() {\n    \n    this.chartDefinition.selectClickAction = function(st){\n        return st.tableData[st.rowIdx][1] == 'folder';\n    };\n    \n    this.chartDefinition.selectExpand = function(st){\n        return st.tableData[st.rowIdx][1] == 'file';\n    };\n}",
       "type": "JavaScript"
      },
      {
@@ -1735,7 +1990,7 @@
      },
      {
       "name": "cccClickAction",
-      "value": "function f(a){\n    var myself = this;\n    var obj = a.target.closest(\"tr\");\n    var row = a.rowIdx;\n    var colName = 0;\n    var colUrl = 4;\n    var colType = 1;\n    var type = a.tableData[row][colType];\n    if ( type == \"folder\" ){\n        var history = Dashboards.getParameterValue('${p:historyParam}'),\n            idx = Dashboards.getParameterValue('${p:indexParam}'),\n            newUrl = a.tableData[row][colUrl];\n    \n        history = history.slice(0,idx+1);\n        history.push(newUrl);\n    \n        Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n        Dashboards.setParameter( '${p:historyParam}' , history );\n        Dashboards.setParameter( '${p:urlParam}' , newUrl );\n        Dashboards.fireChange( '${p:updateEvent}', '1');\n    }\n}",
+      "value": "function f(st){\n    var myself = this,\n        colUrl = 4,\n        history = Dashboards.getParameterValue('${p:historyParam}'),\n        idx = Dashboards.getParameterValue('${p:indexParam}'),\n        newUrl = st.tableData[st.rowIdx][colUrl];\n    \n    history = history.slice(0,idx+1);\n    history.push(newUrl);\n    \n    Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n    Dashboards.setParameter( '${p:historyParam}' , history );\n    Dashboards.setParameter( '${p:urlParam}' , newUrl );\n    Dashboards.fireChange( '${p:updateEvent}', '1');\n}",
       "type": "JavaScript"
      }
     ]
@@ -1768,24 +2023,6 @@
      {
       "name": "javaScript",
       "value": "Dashboards.on('cdf:preInit' , function (){\n    var first = Dashboards.getParameterValue('${p:urlParam}');\n    \n    Dashboards.setParameter('${p:historyParam}', [ first ] );\n    Dashboards.setParameter('${p:indexParam}' , 0 );\n});",
-      "type": "JavaScript"
-     }
-    ]
-   },
-   {
-    "id": "b4521daa-6028-3d97-b16c-bf187a2f2669",
-    "type": "ComponentsFunction",
-    "typeDesc": "Function",
-    "parent": "SCRIPT",
-    "properties": [
-     {
-      "name": "name",
-      "value": "selectiveClickAddInTest",
-      "type": "Id"
-     },
-     {
-      "name": "javaScript",
-      "value": "Dashboards.registerAddIn(\"Table\", \"colType\", new AddIn({\n    name: \"selectiveRowClick\",\n    label: \"Selective Row Click\",\n    defaults: {\n      expand: function (st) {\n        return true;\n      },\n      click: function (st) {\n        return true; \n      },\n      table: undefined,\n      valueFormat: function(v,format,st) {\n          return sprintf(format || \"%s\",v);\n      }\n    },\n\n    init: function(){\n      $.fn.dataTableExt.oSort[this.name+'-asc']  = $.fn.dataTableExt.oSort['string-asc'];\n      $.fn.dataTableExt.oSort[this.name+'-desc']  = $.fn.dataTableExt.oSort['string-desc'];\n    },\n    \n    implementation: function(tgt, st, opt){\n        if (opt.table){\n            var myself = opt.table,\n                cd = myself.chartDefinition;\n            if (myself.expandOnClick) {\n                myself.handleExpandOnClick(st);\n            }\n            if (cd.clickAction){\n\t            cd.clickAction.call(myself,st);\n            }\n        \n        }\n\n        Dashboards.log('Testing stuff');\n      \n    }\n    \n}));",
       "type": "JavaScript"
      }
     ]
