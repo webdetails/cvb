@@ -340,7 +340,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "../cdv/notifications.xml",
+      "value": "/system/cvb/cvb.xml",
       "type": "String"
      },
      {
@@ -360,5 +360,5 @@
  "datasources": {
   "rows": []
  },
- "filename": "/cvbTest/settings.cdfde"
+ "filename": "/system/cvb/dashboards/settings.cdfde"
 }

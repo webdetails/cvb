@@ -1800,11 +1800,11 @@
      {
       "name": "dataSource",
       "type": "Datasource",
-      "value": ""
+      "value": "locationsQuery"
      },
      {
       "name": "valuesArray",
-      "value": "[[\"file://\",\"file://\"],[\"hdfs://admin1.mango.metrics.scl3.mozilla.com:8020/\",\"hdfs://admin1.mango.metrics.scl3.mozilla.com:8020/\"]]",
+      "value": "[]",
       "type": "ValuesArray"
      },
      {
@@ -2361,7 +2361,7 @@
     ]
    },
    {
-    "id": "f062127e-b883-2ff7-60b1-0fd2dfcaa6cb",
+    "id": "432af61e-da6f-17dc-86f9-72a0257fb1c6",
     "type": "Componentskettle_kettleTransFromFile",
     "typeDesc": "kettle over kettleTransFromFile",
     "meta": "CDA",
@@ -2397,6 +2397,77 @@
      {
       "name": "parameters",
       "value": "[[\"urlParam\",\"hdfs://admin1.mango.metrics.scl3.mozilla.com:8020\",\"String\",\"\"]]",
+      "type": "CdaParameters"
+     },
+     {
+      "name": "output",
+      "value": "[]",
+      "type": "IndexArray"
+     },
+     {
+      "name": "outputMode",
+      "value": "include",
+      "type": "OutputMode"
+     },
+     {
+      "name": "cdacolumns",
+      "value": "[]",
+      "type": "CdaColumnsArray"
+     },
+     {
+      "name": "cdacalculatedcolumns",
+      "value": "[]",
+      "type": "CdaCalculatedColumnsArray"
+     },
+     {
+      "name": "cacheDuration",
+      "value": 3600,
+      "type": "Integer"
+     },
+     {
+      "name": "cache",
+      "value": "true",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "f062127e-b883-2ff7-60b1-0fd2dfcaa6cb",
+    "type": "Componentskettle_kettleTransFromFile",
+    "typeDesc": "kettle over kettleTransFromFile",
+    "meta": "CDA",
+    "meta_conntype": "kettle.TransFromFile",
+    "meta_datype": "kettle",
+    "parent": "KETTLE",
+    "properties": [
+     {
+      "name": "name",
+      "value": "locationsQuery",
+      "type": "Id"
+     },
+     {
+      "name": "ktrFile",
+      "value": "../endpoints/kettle/getLocations.ktr",
+      "type": "KtrPath"
+     },
+     {
+      "name": "access",
+      "value": "public",
+      "type": "Access"
+     },
+     {
+      "name": "query",
+      "value": "OUTPUT",
+      "type": "SqlQuery"
+     },
+     {
+      "name": "variables",
+      "value": "[]",
+      "type": "ValuesArray"
+     },
+     {
+      "name": "parameters",
+      "value": "[]",
       "type": "CdaParameters"
      },
      {

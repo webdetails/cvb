@@ -5,6 +5,9 @@
          <KtrFile>../endpoints/kettle/t_list_files.ktr</KtrFile>
          <variables datarow-name="urlParam" variable-name="URL"/>
       </Connection>
+      <Connection id="locationsQuery" type="kettle.TransFromFile">
+         <KtrFile>../endpoints/kettle/getLocations.ktr</KtrFile>
+      </Connection>
    </DataSources>
    <DataAccess access="public" cache="true" cacheDuration="3600" connection="filesQuery"
                id="filesQuery"
@@ -14,6 +17,13 @@
          <Parameter default="hdfs://admin1.mango.metrics.scl3.mozilla.com:8020" name="urlParam"
                     type="String"/>
       </Parameters>
+      <Query>OUTPUT</Query>
+   </DataAccess>
+   <DataAccess access="public" cache="true" cacheDuration="3600" connection="locationsQuery"
+               id="locationsQuery"
+               type="kettle">
+      <Columns/>
+      <Parameters/>
       <Query>OUTPUT</Query>
    </DataAccess>
 </CDADescriptor>
