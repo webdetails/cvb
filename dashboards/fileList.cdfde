@@ -778,19 +778,19 @@
     ]
    },
    {
-    "id": "fa8bf277-d733-0391-a940-741917604288",
+    "id": "cf9cd285-6ed6-d6e2-5b08-a647bc89119b",
     "type": "LayoutColumn",
     "typeDesc": "Column",
     "parent": "44e25ae5-d6e9-0c7e-c131-46b43682eb86",
     "properties": [
      {
       "name": "name",
-      "value": "rootSelectObj",
+      "value": "",
       "type": "Id"
      },
      {
       "name": "columnSpan",
-      "value": "2",
+      "value": "20",
       "type": "Integer"
      },
      {
@@ -851,10 +851,121 @@
     ]
    },
    {
-    "id": "112d400e-59ee-6cfe-9069-b0d57bcca4c7",
+    "id": "7dabf053-65a4-bac5-f225-e858426a1409",
+    "type": "LayoutRow",
+    "typeDesc": "Row",
+    "parent": "cf9cd285-6ed6-d6e2-5b08-a647bc89119b",
+    "properties": [
+     {
+      "name": "name",
+      "value": "urlBar",
+      "type": "Id"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDurlBar",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "65ec765f-a45b-3c83-9a55-eba33658f9ad",
     "type": "LayoutColumn",
     "typeDesc": "Column",
-    "parent": "44e25ae5-d6e9-0c7e-c131-46b43682eb86",
+    "parent": "7dabf053-65a4-bac5-f225-e858426a1409",
+    "properties": [
+     {
+      "name": "name",
+      "value": "rootSelectObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "",
+      "type": "String"
+     }
+    ]
+   },
+   {
+    "id": "edb659d2-3d2d-c218-4e9f-5c74c27e0f5d",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "7dabf053-65a4-bac5-f225-e858426a1409",
     "properties": [
      {
       "name": "name",
@@ -863,7 +974,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "18",
+      "value": "",
       "type": "Integer"
      },
      {
@@ -1431,7 +1542,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "hdfs://",
+      "value": "hdfs://admin1.mango.metrics.scl3.mozilla.com:8020/",
       "type": "String"
      },
      {
@@ -1459,7 +1570,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "/admin1.mango.metrics.scl3.mozilla.com:8020/",
+      "value": "/",
       "type": "String"
      },
      {
@@ -1531,7 +1642,7 @@
     ]
    },
    {
-    "id": "b98072e1-fa00-55be-823f-7ca011e3c141",
+    "id": "b926b21c-acdc-8292-a787-95bf4793d3a1",
     "type": "ComponentsParameter",
     "typeDesc": "Parameter",
     "parent": "GENERIC",
@@ -1640,7 +1751,7 @@
      },
      {
       "name": "postChange",
-      "value": "function f(){\n    var history = Dashboards.getParameterValue('${p:historyParam}'),\n        idx = Dashboards.getParameterValue('${p:indexParam}'),\n        newFile = Dashboards.getParameterValue( this.parameter ),\n        root = Dashboards.getParameterValue('${p:rootParam}');\n    history = history.slice(0, idx+1);\n    history.push( { \n        root: root,\n        filename: newFile\n    });\n            \n    Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n    Dashboards.setParameter( '${p:historyParam}' , history );\n    Dashboards.fireChange( '${p:updateEvent}', '1');\n}",
+      "value": "function f(){\n    var history = Dashboards.getParameterValue('${p:historyParam}'),\n        idx = Dashboards.getParameterValue('${p:indexParam}'),\n        newFile = Dashboards.getParameterValue( this.parameter ),\n        root = Dashboards.getParameterValue('${p:rootParam}');\n    history = history.slice(0, idx+1);\n    history.push( { \n        root: root,\n        filename: newFile,\n        url: root + newFile\n    });\n            \n    Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n    Dashboards.setParameter( '${p:historyParam}' , history );\n    Dashboards.fireChange( '${p:updateEvent}', '1');\n}",
       "type": "JavaScript"
      },
      {
@@ -1693,7 +1804,7 @@
      },
      {
       "name": "valuesArray",
-      "value": "[[\"file://\",\"file://\"],[\"hdfs://\",\"hdfs://\"]]",
+      "value": "[[\"file://\",\"file://\"],[\"hdfs://admin1.mango.metrics.scl3.mozilla.com:8020/\",\"hdfs://admin1.mango.metrics.scl3.mozilla.com:8020/\"]]",
       "type": "ValuesArray"
      },
      {
@@ -1738,7 +1849,7 @@
      },
      {
       "name": "postChange",
-      "value": "function f(){\n    var history = Dashboards.getParameterValue('${p:historyParam}'),\n        idx = Dashboards.getParameterValue('${p:indexParam}'),\n        root = Dashboards.getParameterValue( this.parameter ),\n        file = '/';\n        \n    Dashboards.fireChange('${p:filenameParam}', file);\n        \n    history = history.slice(0, idx+1);\n    history.push({\n        root: root,\n        filename: file\n    });\n            \n    Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n    Dashboards.setParameter( '${p:historyParam}' , history );\n    Dashboards.fireChange( '${p:updateEvent}', '1');\n}",
+      "value": "function f(){\n    var history = Dashboards.getParameterValue('${p:historyParam}'),\n        idx = Dashboards.getParameterValue('${p:indexParam}'),\n        root = Dashboards.getParameterValue( this.parameter ),\n        file = '/';\n        \n    Dashboards.fireChange('${p:filenameParam}', file);\n        \n    history = history.slice(0, idx+1);\n    history.push({\n        root: root,\n        filename: file,\n        url: root + file\n    });\n            \n    Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n    Dashboards.setParameter( '${p:historyParam}' , history );\n    Dashboards.fireChange( '${p:updateEvent}', '1');\n}",
       "type": "JavaScript"
      },
      {
@@ -2159,7 +2270,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    \n    this.custom = this.custom || {};\n    \n    if ( !this.custom.initializedAddIns){\n        this.setAddInOptions( 'colType' , 'formattedText', function (st){\n            var out = {};\n            if ( st.colIdx == 4 ){\n                out.textFormat = function (v, st){\n                    return $('<div/>').addClass('downloadContainer')\n                        .append( $('<span/>').addClass('link').text(v) )\n                        .append( $('<span/>').addClass('action').text(\n                            ( st.tableData[st.rowIdx][1] === 'file') ?\n                            \"Click to Download\" : \"Click to Open\"\n                        ));\n                };\n            }\n            return out;\n        });\n        this.custom.initializedAddIns = true;\n    }\n    \n    \n    var idx = Dashboards.getParameterValue('${p:indexParam}'),\n        history = Dashboards.getParameterValue('${p:historyParam}');\n    this.parameters = [ [ 'urlParam', \"'\" + history[idx].root + history[idx].filename + \"'\" ] ];\n    \n    \n}",
+      "value": "function f(){\n    \n    this.custom = this.custom || {};\n    \n    var root = Dashboards.getParameterValue('${p:rootParam}');    \n    if ( !this.custom.initializedAddIns){\n        this.setAddInOptions( 'colType' , 'formattedText', function (st){\n            var out = {};\n            if ( st.colIdx == 4 ){\n                out.textFormat = function (v, st){\n                    return $('<div/>').addClass('downloadContainer')\n                        .append( $('<span/>').addClass('link').text(\n                            v.replace(root,\"\")\n                        ))\n                        .append( $('<span/>').addClass('action').text(\n                            ( st.tableData[st.rowIdx][1] === 'file') ?\n                            \"Click to Download\" : \"Click to Open\"\n                        ));\n                };\n            }\n            return out;\n        });\n        this.custom.initializedAddIns = true;\n    }\n    \n    \n    var idx = Dashboards.getParameterValue('${p:indexParam}'),\n        history = Dashboards.getParameterValue('${p:historyParam}');\n    this.parameters = [ [ 'urlParam', \"'\" + history[idx].url + \"'\" ] ];\n    \n    \n}",
       "type": "JavaScript"
      },
      {
@@ -2194,7 +2305,7 @@
      },
      {
       "name": "cccClickAction",
-      "value": "function f(st){\n    var myself = this,\n        fileType = st.tableData[st.rowIdx][1],\n        filePath = st.tableData[st.rowIdx][4];\n\n    if ( fileType === 'folder' ){\n        var history = Dashboards.getParameterValue('${p:historyParam}'),\n            idx = Dashboards.getParameterValue('${p:indexParam}'),\n            root = Dashboards.getParameterValue('${p:rootParam}');\n        history = history.slice(0,idx+1);\n        history.push({\n            root: root,\n            filename: filePath\n        });\n    \n        Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n        Dashboards.setParameter( '${p:historyParam}' , history );\n        Dashboards.setParameter( '${p:filenameParam}' , filePath );\n        Dashboards.fireChange( '${p:updateEvent}', '1');\n    } else if ( fileType === 'file' ){\n       Dashboards.log( 'Download File: ' + filePath);\n        // this.handleExpandOnClick(st);\n    }\n    \n\n}",
+      "value": "function f(st){\n    var myself = this,\n        fileType = st.tableData[st.rowIdx][1],\n        url = st.tableData[st.rowIdx][4];\n\n    if ( fileType === 'folder' ){\n        var history = Dashboards.getParameterValue('${p:historyParam}'),\n            idx = Dashboards.getParameterValue('${p:indexParam}'),\n            root = Dashboards.getParameterValue('${p:rootParam}');\n        history = history.slice(0,idx+1);\n        history.push({\n            root: root,\n            filename: url.replace( root, \"\"),\n            url: url\n        });\n    \n        Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n        Dashboards.setParameter( '${p:historyParam}' , history );\n        Dashboards.fireChange( '${p:updateEvent}', '1');\n    } else if ( fileType === 'file' ){\n       Dashboards.log( 'Download File: ' + url);\n        // this.handleExpandOnClick(st);\n    }\n    \n\n}",
       "type": "JavaScript"
      }
     ]
@@ -2226,7 +2337,7 @@
      },
      {
       "name": "javaScript",
-      "value": "Dashboards.on('cdf:preInit' , function (){\n    var first = Dashboards.getParameterValue('${p:filenameParam}'),\n        root = Dashboards.getParameterValue('${p:rootParam}');\n    \n    Dashboards.setParameter('${p:historyParam}', [ {\n        root: root,\n        filename: first\n    } ] );\n    Dashboards.setParameter('${p:indexParam}' , 0 );\n});",
+      "value": "Dashboards.on('cdf:preInit' , function (){\n    var first = Dashboards.getParameterValue('${p:filenameParam}'),\n        root = Dashboards.getParameterValue('${p:rootParam}');\n    \n    Dashboards.setParameter('${p:historyParam}', [ {\n        root: root,\n        filename: first,\n        url: root + first\n    } ] );\n    Dashboards.setParameter('${p:indexParam}' , 0 );\n});",
       "type": "JavaScript"
      }
     ]
