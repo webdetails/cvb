@@ -2,7 +2,7 @@
 <cdf>
         <title>Initial Test</title>
         <author></author>
-        <description>Initial Test Description</description>
+        <description>Initial Test</description>
         <icon/>
 		<style>cpk</style>
 <rendererType>blueprint</rendererType><widget>false</widget></cdf>

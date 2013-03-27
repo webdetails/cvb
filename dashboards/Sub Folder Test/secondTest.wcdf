@@ -2,7 +2,7 @@
 <cdf>
         <title>Second Test</title>
         <author></author>
-        <description>Second Test Description</description>
+        <description>Second Test</description>
         <icon/>
 		<style>cpk</style>
 <rendererType>blueprint</rendererType><widget>false</widget></cdf>
