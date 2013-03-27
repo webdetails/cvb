@@ -253,6 +253,22 @@
 }
 
 
+.WDdataCellBody .formattedText .downloadContainer > div {
+  padding: 5px;
+}
+
+.WDdataCellBody .formattedText .downloadContainer .action {
+  display:none;
+  
+  font-weight:bold;
+  width:100px;
+  float:right;
+  text-align:left;
+}
+.WDdataCellBody tr:hover .formattedText .downloadContainer .action {
+  display:block;
+}
+
 /* =============================================================================
    6. CHARTS 
    ========================================================================== */

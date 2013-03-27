@@ -1824,16 +1824,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colHeaders",
-      "value": "[\"Name\",\"Type\",\"Date Modified\",\"Size (bytes)\",\"Download Link\"]",
-      "type": "Array"
-     },
-     {
-      "name": "colTypes",
-      "value": "[\"formattedText\",\"formattedText\",\"formattedText\",\"numeric\",\"hyperlink\"]",
-      "type": "colTypesCustom"
-     },
-     {
       "name": "colFormats",
       "value": "[]",
       "type": "Array"
@@ -1859,14 +1849,14 @@
       "type": "ValuesArray"
      },
      {
-      "name": "filter",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colHeaders",
+      "value": "[\"Name\",\"Type\",\"Date Modified\",\"Size (bytes)\",\"Download Link\"]",
+      "type": "Array"
      },
      {
-      "name": "info",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colTypes",
+      "value": "[\"formattedText\",\"formattedText\",\"formattedText\",\"numeric\",\"formattedText\"]",
+      "type": "colTypesCustom"
      },
      {
       "name": "sort",
@@ -1885,11 +1875,21 @@
      },
      {
       "name": "expandOnClick",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      },
      {
       "name": "paginate",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "filter",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "info",
       "value": "false",
       "type": "Boolean"
      },
@@ -1955,7 +1955,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f() {\n    \n    this.chartDefinition.selectClickAction = function(st){\n        return st.tableData[st.rowIdx][1] == 'folder';\n    };\n    \n    this.chartDefinition.selectExpand = function(st){\n        return st.tableData[st.rowIdx][1] == 'file';\n    };\n}",
+      "value": "function f(){\n    \n    this.custom = this.custom || {};\n    \n    if ( !this.custom.initializedAddIns){\n        this.setAddInOptions( 'colType' , 'formattedText', function (st){\n            var out = {};\n            if ( st.colIdx == 4 ){\n                out.textFormat = function (v, st){\n                    return $('<div/>').addClass('downloadContainer')\n                        .append( $('<span/>').addClass('link').text(v) )\n                        .append( $('<span/>').addClass('action').text(\n                            ( st.tableData[st.rowIdx][1] === 'file') ?\n                            \"Click to Download\" : \"Click to Open\"\n                        ));\n                };\n            }\n            return out;\n        });\n        this.custom.initializedAddIns = true;\n    }\n    \n    \n}",
       "type": "JavaScript"
      },
      {
@@ -1990,7 +1990,7 @@
      },
      {
       "name": "cccClickAction",
-      "value": "function f(st){\n    var myself = this,\n        colUrl = 4,\n        history = Dashboards.getParameterValue('${p:historyParam}'),\n        idx = Dashboards.getParameterValue('${p:indexParam}'),\n        newUrl = st.tableData[st.rowIdx][colUrl];\n    \n    history = history.slice(0,idx+1);\n    history.push(newUrl);\n    \n    Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n    Dashboards.setParameter( '${p:historyParam}' , history );\n    Dashboards.setParameter( '${p:urlParam}' , newUrl );\n    Dashboards.fireChange( '${p:updateEvent}', '1');\n}",
+      "value": "function f(st){\n    var myself = this,\n        fileType = st.tableData[st.rowIdx][1],\n        filePath = st.tableData[st.rowIdx][4];\n\n    if ( fileType === 'folder' ){\n        var history = Dashboards.getParameterValue('${p:historyParam}'),\n            idx = Dashboards.getParameterValue('${p:indexParam}');\n        history = history.slice(0,idx+1);\n        history.push(filePath);\n    \n        Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n        Dashboards.setParameter( '${p:historyParam}' , history );\n        Dashboards.setParameter( '${p:urlParam}' , filePath );\n        Dashboards.fireChange( '${p:updateEvent}', '1');\n    } else if ( fileType === 'file' ){\n       Dashboards.log( 'Download File: ' + filePath);\n        // this.handleExpandOnClick(st);\n    }\n    \n\n}",
       "type": "JavaScript"
      }
     ]

@@ -2,7 +2,7 @@
 <cdf>
         <title>File List Dashboard</title>
         <author></author>
-        <description>File List Dashboard</description>
+        <description>File List</description>
         <icon/>
 		<style>cpk</style>
 <rendererType>blueprint</rendererType><widget>false</widget></cdf>
