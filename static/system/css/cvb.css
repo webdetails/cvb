@@ -253,7 +253,7 @@
 
 .WDdataCellBody tr {
     text-align: left;
-        height: 30px;
+        height: 35px;
 }
 .WDdataCellBody tbody tr.odd,
 .WDdataCellBody tbody tr.even {
@@ -320,27 +320,61 @@
 .WDdataCellBody td,
 .WDdataCellBody td.string,
 .WDdataCellBody td.numeric {
+    min-height:100%;
     font-size: 10px;
     font-weight: normal;
+    padding:0;
 }
 
 
+
+.WDdataCellBody .formattedText .downloadContainer {
+  position:relative;
+  min-height:35px;
+}
 .WDdataCellBody .formattedText .downloadContainer > div {
-  padding: 5px;
+  height:100%;
 }
-
 .WDdataCellBody .formattedText .downloadContainer .action {
   display:none;
 
   font-weight:bold;
-  width:100px;
+  width:20%;
   float:right;
   text-align:left;
+}
+.WDdataCellBody .formattedText .downloadContainer .link {
+  width:80%;
+  float:left;
 }
 .WDdataCellBody tr:hover .formattedText .downloadContainer .action {
   display:block;
 }
-
+.WDdataCellBody .formattedText .downloadContainer .urlButton {
+  display:none;
+  height:100%;
+  position:absolute;
+  left:100%;
+  top:0px;
+  padding-left:15px;
+  padding-right:5px;
+}
+.WDdataCellBody .formattedText .downloadContainer .urlButton {
+  display:none;
+  width:65px;
+}
+.WDdataCellBody tr:hover .formattedText .downloadContainer .urlButton {
+  display:block;
+}
+.WDdataCellBody  .formattedText .downloadContainer .urlButton {
+  cursor:default;
+}
+.WDdataCellBody  .formattedText .downloadContainer .urlButton button {
+  cursor:pointer;
+}
+.WDdataCellBody  .formattedText .downloadContainer .urlCopy textarea {
+  min-height:100%;
+}
 /* =============================================================================
    6. CHARTS 
    ========================================================================== */

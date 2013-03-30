@@ -672,6 +672,79 @@
     ]
    },
    {
+    "id": "81df5e2a-bb37-71df-ab54-dcc342adbf30",
+    "type": "LayoutColumn",
+    "typeDesc": "Column",
+    "parent": "44e25ae5-d6e9-0c7e-c131-46b43682eb86",
+    "properties": [
+     {
+      "name": "name",
+      "value": "upButtonObj",
+      "type": "Id"
+     },
+     {
+      "name": "columnSpan",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrepend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnAppend",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "columnPrependTop",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnAppendBottom",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "columnBigBorder",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "height",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "backgroundColor",
+      "value": "",
+      "type": "Color"
+     },
+     {
+      "name": "roundCorners",
+      "value": "",
+      "type": "RoundCorners"
+     },
+     {
+      "name": "textAlign",
+      "value": "",
+      "type": "TextAlign"
+     },
+     {
+      "name": "cssClass",
+      "value": "WDbuttonContainer",
+      "type": "String"
+     }
+    ]
+   },
+   {
     "id": "78debb4f-7fbe-90f4-922d-84edaf9d9965",
     "type": "LayoutColumn",
     "typeDesc": "Column",
@@ -790,7 +863,7 @@
      },
      {
       "name": "columnSpan",
-      "value": "20",
+      "value": "19",
       "type": "Integer"
      },
      {
@@ -1542,7 +1615,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "hdfs://admin1.mango.metrics.scl3.mozilla.com:8020/",
+      "value": "file://",
       "type": "String"
      },
      {
@@ -1570,7 +1643,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "/",
+      "value": "",
       "type": "String"
      },
      {
@@ -1849,7 +1922,7 @@
      },
      {
       "name": "postChange",
-      "value": "function f(){\n    var history = Dashboards.getParameterValue('${p:historyParam}'),\n        idx = Dashboards.getParameterValue('${p:indexParam}'),\n        root = Dashboards.getParameterValue( this.parameter ),\n        file = '/';\n        \n    Dashboards.fireChange('${p:filenameParam}', file);\n        \n    history = history.slice(0, idx+1);\n    history.push({\n        root: root,\n        filename: file,\n        url: root + file\n    });\n            \n    Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n    Dashboards.setParameter( '${p:historyParam}' , history );\n    Dashboards.fireChange( '${p:updateEvent}', '1');\n}",
+      "value": "function f(){\n    var history = Dashboards.getParameterValue('${p:historyParam}'),\n        idx = Dashboards.getParameterValue('${p:indexParam}'),\n        root = Dashboards.getParameterValue( this.parameter ),\n        file = '';\n        \n    Dashboards.fireChange('${p:filenameParam}', file);\n        \n    history = history.slice(0, idx+1);\n    history.push({\n        root: root,\n        filename: file,\n        url: root + file\n    });\n            \n    Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n    Dashboards.setParameter( '${p:historyParam}' , history );\n    Dashboards.fireChange( '${p:updateEvent}', '1');\n}",
       "type": "JavaScript"
      },
      {
@@ -2035,7 +2108,7 @@
     ]
    },
    {
-    "id": "93bf09a1-6c6c-0943-8ab4-71ee6b2f42bf",
+    "id": "1198b1ac-9143-571a-9098-6630dea96400",
     "type": "ComponentsbuttonComponent",
     "typeDesc": "Button Component",
     "parent": "OTHERCOMPONENTS",
@@ -2113,6 +2186,84 @@
     ]
    },
    {
+    "id": "93bf09a1-6c6c-0943-8ab4-71ee6b2f42bf",
+    "type": "ComponentsbuttonComponent",
+    "typeDesc": "Button Component",
+    "parent": "OTHERCOMPONENTS",
+    "properties": [
+     {
+      "name": "name",
+      "value": "upButton",
+      "type": "Id"
+     },
+     {
+      "name": "label",
+      "value": "^",
+      "type": "String"
+     },
+     {
+      "name": "listeners",
+      "value": "['${p:updateEvent}']",
+      "type": "Listeners"
+     },
+     {
+      "name": "expression",
+      "value": "function f(){\n    if ( !$('#' + this.htmlObject).hasClass('disabled')){\n        var history = Dashboards.getParameterValue('${p:historyParam}'),\n            idx = Dashboards.getParameterValue('${p:indexParam}'),\n            parsedFileArray = _.without( history[idx].filename.split('/') , \"\" ),\n            newFile = _.initial( parsedFileArray ).join('/'),\n            root = Dashboards.getParameterValue('${p:rootParam}');\n        history = history.slice(0, idx+1);\n        history.push( { \n            root: root,\n            filename: newFile,\n            url: root + newFile\n        });\n            \n        Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n        Dashboards.setParameter( '${p:historyParam}' , history );\n        Dashboards.fireChange( '${p:updateEvent}', '1');\n    }\n}\n",
+      "type": "JavaScript"
+     },
+     {
+      "name": "priority",
+      "value": 5,
+      "type": "Integer"
+     },
+     {
+      "name": "refreshPeriod",
+      "value": "",
+      "type": "Integer"
+     },
+     {
+      "name": "tableStyle",
+      "value": "classic",
+      "type": "TableStyle"
+     },
+     {
+      "name": "htmlObject",
+      "value": "${p:upButtonObj}",
+      "type": "HtmlObject"
+     },
+     {
+      "name": "executeAtStart",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
+      "name": "preExecution",
+      "value": "function f(){\n    var history = Dashboards.getParameterValue('${p:historyParam}'),\n        idx = Dashboards.getParameterValue('${p:indexParam}'),\n        parsedFileArray = _.without( history[idx].filename.split('/') , \"\" );\n    $('#' + this.htmlObject).toggleClass('disabled', _.isEmpty(parsedFileArray) );\n}",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postExecution",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "preChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "postChange",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
+      "name": "tooltip",
+      "value": "",
+      "type": "Html"
+     }
+    ]
+   },
+   {
     "id": "9c032b37-5c50-122f-23e6-1216b61b7a4d",
     "type": "ComponentsTable",
     "typeDesc": "table Component",
@@ -2137,16 +2288,6 @@
       "name": "oLanguage",
       "value": "",
       "type": "JavaScript"
-     },
-     {
-      "name": "colSortable",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
-      "name": "expandParameters",
-      "value": "[]",
-      "type": "ValuesArray"
      },
      {
       "name": "xActionArrayParameter",
@@ -2174,14 +2315,14 @@
       "type": "Array"
      },
      {
-      "name": "lengthChange",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colSortable",
+      "value": "[]",
+      "type": "Array"
      },
      {
-      "name": "expandOnClick",
-      "value": "false",
-      "type": "Boolean"
+      "name": "expandParameters",
+      "value": "[]",
+      "type": "ValuesArray"
      },
      {
       "name": "paginate",
@@ -2207,6 +2348,16 @@
       "name": "displayLength",
       "value": "",
       "type": "Integer"
+     },
+     {
+      "name": "lengthChange",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
+      "name": "expandOnClick",
+      "value": "false",
+      "type": "Boolean"
      },
      {
       "name": "colSearchable",
@@ -2270,7 +2421,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    \n    this.custom = this.custom || {};\n    \n        \n    if ( !this.custom.initializedAddIns){\n        this.setAddInOptions( 'colType' , 'formattedText', function (st){\n            var out = {};\n            if ( st.colIdx == 4 ){\n                out.textFormat = function (v, st){\n                    var root = Dashboards.getParameterValue('${p:rootParam}');\n                    return $('<div/>').addClass('downloadContainer')\n                        .append( $('<span/>').addClass('link').text(\n                            v.replace(root,\"\")\n                        ))\n                        .append( $('<span/>').addClass('action').text(\n                            ( st.tableData[st.rowIdx][1] === 'file') ?\n                            \"Click to Download\" : \"Click to Open\"\n                        ));\n                };\n            }\n            return out;\n        });\n        this.custom.initializedAddIns = true;\n    }\n    \n    \n    var idx = Dashboards.getParameterValue('${p:indexParam}'),\n        history = Dashboards.getParameterValue('${p:historyParam}');\n    this.parameters = [ [ 'urlParam', \"'\" + history[idx].url + \"'\" ] ];\n    \n    \n}",
+      "value": "function f(){\n    \n    this.custom = this.custom || {};\n    \n        \n    if ( !this.custom.initializedAddIns){\n        this.setAddInOptions( 'colType' , 'formattedText', function (st){\n            var out = {};\n            if ( st.colIdx == 4 ){\n                out.textFormat = function (v, st){\n                    var root = Dashboards.getParameterValue('${p:rootParam}');\n                    var $container = $('<div/>').addClass('downloadContainer'),\n                        $link = $('<div/>').addClass('link').text( v.replace(root,\"\") ),\n                        $action = $('<div/>').addClass('action')\n                            .text( ( st.tableData[st.rowIdx][1] === 'file') ?\n                                \"Click to Download\" : \"Click to Open\" \n                            );\n                    $container.append( $link, $action);\n                    if ( st.tableData[st.rowIdx][1] === 'file' ) {\n                        var $urlCopy = $('<div/>').addClass('urlCopy')\n                                .append( $('<textarea/>').text(v)\n                                    .attr({ readonly: \"readonly\"}))\n                                .focusout( function (){\n                                    $urlCopy.hide();\n                                    $link.show();\n                                    $action.show();\n                                })\n                                .click( function(e){\n                                    e.stopPropagation();\n                                })\n                                .hide();\n                                \n                        var $urlButton = $('<div/>').addClass('urlButton')\n                                .append( $('<button/>').text('URL')\n                                    .click( function(e){\n                                        $urlCopy.find('textarea').focus();\n                                        $urlCopy.toggle();\n                                        $link.toggle();\n                                        $action.toggle();\n                                        \n                                        e.stopPropagation();\n                                    }));\n                        $container.append( $urlCopy, $urlButton );\n                    }\n                    return $container;\n                };\n            }\n            return out;\n        });\n        this.custom.initializedAddIns = true;\n    }\n    \n    \n    var idx = Dashboards.getParameterValue('${p:indexParam}'),\n        history = Dashboards.getParameterValue('${p:historyParam}');\n    this.parameters = [ [ 'urlParam', \"'\" + history[idx].url + \"'\" ] ];\n    \n    \n}",
       "type": "JavaScript"
      },
      {
@@ -2426,7 +2577,7 @@
      },
      {
       "name": "cache",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      }
     ]

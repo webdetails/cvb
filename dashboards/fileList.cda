@@ -9,7 +9,7 @@
          <KtrFile>../endpoints/kettle/getLocations.ktr</KtrFile>
       </Connection>
    </DataSources>
-   <DataAccess access="public" cache="true" cacheDuration="3600" connection="filesQuery"
+   <DataAccess access="public" cache="false" cacheDuration="3600" connection="filesQuery"
                id="filesQuery"
                type="kettle">
       <Columns/>
