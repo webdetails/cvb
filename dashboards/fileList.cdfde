@@ -918,15 +918,15 @@
      },
      {
       "name": "cssClass",
-      "value": "",
+      "value": "navBar",
       "type": "String"
      }
     ]
    },
    {
-    "id": "7dabf053-65a4-bac5-f225-e858426a1409",
-    "type": "LayoutRow",
-    "typeDesc": "Row",
+    "id": "ff036570-2d54-9b4b-9076-3a08e067479d",
+    "type": "LayoutHtml",
+    "typeDesc": "Html",
     "parent": "cf9cd285-6ed6-d6e2-5b08-a647bc89119b",
     "properties": [
      {
@@ -935,170 +935,19 @@
       "type": "Id"
      },
      {
-      "name": "height",
+      "name": "html",
+      "value": "<table class='WDurlBar' id='urlBar'>\n    <tbody>\n        <tr>\n            <td id='rootSelectObj' />\n            <td id='selectURLObj'  />\n        </tr>\n    </tbody>\n</table> ",
+      "type": "Html"
+     },
+     {
+      "name": "fontSize",
       "value": "",
       "type": "Integer"
      },
      {
-      "name": "backgroundColor",
+      "name": "color",
       "value": "",
       "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "WDurlBar",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "65ec765f-a45b-3c83-9a55-eba33658f9ad",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "7dabf053-65a4-bac5-f225-e858426a1409",
-    "properties": [
-     {
-      "name": "name",
-      "value": "rootSelectObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
-     },
-     {
-      "name": "cssClass",
-      "value": "",
-      "type": "String"
-     }
-    ]
-   },
-   {
-    "id": "edb659d2-3d2d-c218-4e9f-5c74c27e0f5d",
-    "type": "LayoutColumn",
-    "typeDesc": "Column",
-    "parent": "7dabf053-65a4-bac5-f225-e858426a1409",
-    "properties": [
-     {
-      "name": "name",
-      "value": "selectURLObj",
-      "type": "Id"
-     },
-     {
-      "name": "columnSpan",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrepend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnAppend",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "columnPrependTop",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnAppendBottom",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "columnBigBorder",
-      "value": "false",
-      "type": "Boolean"
-     },
-     {
-      "name": "height",
-      "value": "",
-      "type": "Integer"
-     },
-     {
-      "name": "backgroundColor",
-      "value": "",
-      "type": "Color"
-     },
-     {
-      "name": "roundCorners",
-      "value": "",
-      "type": "RoundCorners"
-     },
-     {
-      "name": "textAlign",
-      "value": "",
-      "type": "TextAlign"
      },
      {
       "name": "cssClass",
@@ -2208,7 +2057,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    if ( !$('#' + this.htmlObject).hasClass('disabled')){\n        var history = Dashboards.getParameterValue('${p:historyParam}'),\n            idx = Dashboards.getParameterValue('${p:indexParam}'),\n            parsedFileArray = _.without( history[idx].filename.split('/') , \"\" ),\n            newFile = _.initial( parsedFileArray ).join('/'),\n            root = Dashboards.getParameterValue('${p:rootParam}');\n        history = history.slice(0, idx+1);\n        history.push( { \n            root: root,\n            filename: newFile,\n            url: root + newFile\n        });\n            \n        Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n        Dashboards.setParameter( '${p:historyParam}' , history );\n        Dashboards.fireChange( '${p:updateEvent}', '1');\n    }\n}\n",
+      "value": "function f(){\n    if ( !$('#' + this.htmlObject).hasClass('disabled')){\n        var history = Dashboards.getParameterValue('${p:historyParam}'),\n            idx = Dashboards.getParameterValue('${p:indexParam}'),\n            parsedFileArray = _.without( history[idx].filename.split('/') , \"\" );\n        parsedFileArray.unshift(\"\");\n        var newFile = _.initial( parsedFileArray ).join('/'),\n            root = Dashboards.getParameterValue('${p:rootParam}');\n        history = history.slice(0, idx+1);\n        history.push( { \n            root: root,\n            filename: newFile,\n            url: root + newFile\n        });\n            \n        Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n        Dashboards.setParameter( '${p:historyParam}' , history );\n        Dashboards.fireChange( '${p:updateEvent}', '1');\n    }\n}\n",
       "type": "JavaScript"
      },
      {
@@ -2421,7 +2270,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    \n    this.custom = this.custom || {};\n    \n        \n    if ( !this.custom.initializedAddIns){\n        this.setAddInOptions( 'colType' , 'formattedText', function (st){\n            var out = {};\n            if ( st.colIdx == 4 ){\n                out.textFormat = function (v, st){\n                    var root = Dashboards.getParameterValue('${p:rootParam}');\n                    var $container = $('<div/>').addClass('downloadContainer'),\n                        $link = $('<div/>').addClass('link').text( v.replace(root,\"\") ),\n                        $action = $('<div/>').addClass('action')\n                            .text( ( st.tableData[st.rowIdx][1] === 'file') ?\n                                \"Click to Download\" : \"Click to Open\" \n                            );\n                    $container.append( $link, $action);\n                    if ( st.tableData[st.rowIdx][1] === 'file' ) {\n                        var $urlCopy = $('<div/>').addClass('urlCopy WDhidden')\n                                .append( $('<textarea/>').text(v)\n                                    .attr({ readonly: \"readonly\"}))\n                                .focusout( function (){\n                                    $urlCopy.addClass('WDhidden');\n                                    $link.removeClass('WDhidden');\n                                    $action.removeClass('WDhidden');\n                                })\n                                .click( function(e){\n                                    e.stopPropagation();\n                                });\n                                \n                        var $urlButton = $('<div/>').addClass('urlButton')\n                                .append( $('<button/>').text('URL')\n                                    .click( function(e){\n                                        $urlCopy.find('textarea').focus();\n                                        $urlCopy.toggleClass('WDhidden');\n                                        $link.toggleClass('WDhidden');\n                                        $action.toggleClass('WDhidden');\n                                        \n                                        e.stopPropagation();\n                                    }));\n                        $container.append( $urlCopy, $urlButton );\n                    }\n                    return $container;\n                };\n            }\n            return out;\n        });\n        this.custom.initializedAddIns = true;\n    }\n    \n    \n    var idx = Dashboards.getParameterValue('${p:indexParam}'),\n        history = Dashboards.getParameterValue('${p:historyParam}');\n    this.parameters = [ [ 'urlParam', \"'\" + history[idx].url + \"'\" ] ];\n    \n    \n}",
+      "value": "function f(){\n    \n    this.custom = this.custom || {};\n    \n        \n    if ( !this.custom.initializedAddIns){\n        var method = 'downloadFile',\n            pluginPath = _.initial( window.location.pathname.split('/') ).join('/'),\n            downloadLink = window.location.origin + pluginPath + '/' + method;\n        \n        this.setAddInOptions( 'colType' , 'formattedText', function (st){\n            var out = {};\n            if ( st.colIdx == 4 ){\n                out.textFormat = function (v, st){\n                    var root = Dashboards.getParameterValue('${p:rootParam}');\n                    var $container = $('<div/>').addClass('downloadContainer'),\n                        $link = $('<div/>').addClass('link').text( v.replace(root,\"\") ),\n                        $action = $('<div/>').addClass('action')\n                            .text( ( st.tableData[st.rowIdx][1] === 'file') ?\n                                \"Click to Download\" : \"Click to Open\" \n                            );\n                    $container.append( $link, $action);\n                    if ( st.tableData[st.rowIdx][1] === 'file' ) {\n                        \n                        var $urlCopy = $('<div/>').addClass('urlCopy WDhidden')\n                                .append( $('<textarea/>')\n                                    .text( downloadLink + \"?paramURL=\" + v)\n                                    .attr({ readonly: \"readonly\"}))\n                                .focusout( function (){\n                                    $urlCopy.addClass('WDhidden');\n                                    $link.removeClass('WDhidden');\n                                    $action.removeClass('WDhidden');\n                                })\n                                .click( function(e){\n                                    e.stopPropagation();\n                                });\n                                \n                        var $urlButton = $('<div/>').addClass('urlButton')\n                                .append( $('<button/>').text('URL')\n                                    .click( function(e){\n                                        $urlCopy.find('textarea').focus();\n                                        $urlCopy.toggleClass('WDhidden');\n                                        $link.toggleClass('WDhidden');\n                                        $action.toggleClass('WDhidden');\n                                        \n                                        e.stopPropagation();\n                                    }));\n                        $container.append( $urlCopy, $urlButton );\n                    }\n                    return $container;\n                };\n            }\n            return out;\n        });\n        this.custom.initializedAddIns = true;\n    }\n    \n    \n    var idx = Dashboards.getParameterValue('${p:indexParam}'),\n        history = Dashboards.getParameterValue('${p:historyParam}');\n    this.parameters = [ [ 'urlParam', \"'\" + history[idx].url + \"'\" ] ];\n    \n    \n}",
       "type": "JavaScript"
      },
      {
