@@ -936,7 +936,7 @@
      },
      {
       "name": "html",
-      "value": "<table class='WDurlBar' id='urlBar'>\n    <tbody>\n        <tr>\n            <td id='rootSelectObj' />\n            <td id='selectURLObj'  />\n        </tr>\n    </tbody>\n</table> ",
+      "value": "<table class='WDurlBar' id='urlBar'>\n    <tbody>\n        <tr>\n            <td><div id='rootSelectObj' /></td>\n            <td><div id='selectURLObj'  /></td>\n        </tr>\n    </tbody>\n</table> ",
       "type": "Html"
      },
      {
@@ -2140,7 +2140,7 @@
      },
      {
       "name": "colHeaders",
-      "value": "[\"Name\",\"Type\",\"Date Modified\",\"Size (bytes)\",\"Download Link\"]",
+      "value": "[\"Name\",\"Type\",\"Date Modified\",\"Size (bytes)\",\"File path\"]",
       "type": "Array"
      },
      {
