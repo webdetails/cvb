@@ -2,7 +2,7 @@
 <CDADescriptor>
    <DataSources>
       <Connection id="filesQuery" type="kettle.TransFromFile">
-         <KtrFile>../endpoints/kettle/t_list_files.ktr</KtrFile>
+         <KtrFile>../endpoints/kettle/listFiles.ktr</KtrFile>
          <variables datarow-name="urlParam" variable-name="URL"/>
       </Connection>
       <Connection id="locationsQuery" type="kettle.TransFromFile">
