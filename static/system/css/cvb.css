@@ -374,15 +374,9 @@
 .WDdataCellBody .formattedText .downloadContainer .urlButton {
   display:none;
   height:100%;
-  position:absolute;
-  left:100%;
-  top:0px;
-  padding-left:15px;
-  padding-right:5px;
-}
-.WDdataCellBody .formattedText .downloadContainer .urlButton {
   display:none;
-  width:65px;
+  float:right;
+  font-size:9px;
 }
 .WDdataCellBody tr:hover .formattedText .downloadContainer .urlButton {
   display:block;
@@ -392,10 +386,16 @@
 }
 .WDdataCellBody  .formattedText .downloadContainer .urlButton button {
   cursor:pointer;
+  font-size:9px;
+  height:12px;
+  line-height: 12px;
+  width:auto;
+  padding:0;
 }
 .WDdataCellBody  .formattedText .downloadContainer .urlCopy textarea {
   resize: none;
   height:100%;
+  max-width:350px;
 }
 /* =============================================================================
    6. CHARTS 
