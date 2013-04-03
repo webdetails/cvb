@@ -1,12 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <cvbConfig>
 	<vfsLocations>
 		<vfsLocation name="Home" topLevel="hdfs://admin1.mango.metrics.scl3.mozilla.com:8020">
-			<access type="deny">  </access>
-			<access type="allow"> </access>
+			<access type="deny">.*</access>
+			<access type="allow">.*</access>
 		</vfsLocation>
         <vfsLocation name="Home" topLevel="file://">
-    		<access type="deny">  </access>
-			<access type="allow"> </access>
+    		<access type="deny">.*</access>
+			<access type="allow">.*</access>
 		</vfsLocation>
 	</vfsLocations>
 </cvbConfig>

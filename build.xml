@@ -7,11 +7,11 @@
 
   See common_build.xml for more details
 ============================================================================-->
-<project name="Community Data Validator" basedir="." default="jar"
+<project name="Community VFS Browser" basedir="." default="jar"
          xmlns:ivy="antlib:org.apache.ivy.ant">
 
   <description>
-    This build file is used to create the CDV project
+    This build file is used to create the CVB project
     and works with the common_build.xml file.
   </description>
 
@@ -34,7 +34,7 @@
   -->
 
   <property name="plugin.name"
-            value="cdv"
+            value="cvb"
             description="Name of the plugin"/>
 
   <property name="resource.dir"
