@@ -1610,7 +1610,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "file://",
+      "value": "",
       "type": "String"
      },
      {
@@ -1638,7 +1638,7 @@
      },
      {
       "name": "propertyValue",
-      "value": "",
+      "value": "/",
       "type": "String"
      },
      {
@@ -1654,7 +1654,7 @@
     ]
    },
    {
-    "id": "30b2fb11-c616-5695-c893-908c2ddb954b",
+    "id": "00859015-a3b9-b8e5-d45a-9848b40dba18",
     "type": "ComponentsParameter",
     "typeDesc": "Parameter",
     "parent": "GENERIC",
@@ -1662,62 +1662,6 @@
      {
       "name": "name",
       "value": "updateEvent",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "69af6ecf-7e9f-f852-97c8-a282aafb4f20",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "historyParam",
-      "type": "Id"
-     },
-     {
-      "name": "propertyValue",
-      "value": "",
-      "type": "String"
-     },
-     {
-      "name": "parameterViewRole",
-      "value": "unused",
-      "type": "parameterViewRoleCustom"
-     },
-     {
-      "name": "bookmarkable",
-      "value": "false",
-      "type": "Boolean"
-     }
-    ]
-   },
-   {
-    "id": "efaa24c9-a8fb-5084-f40c-e4aa92289283",
-    "type": "ComponentsParameter",
-    "typeDesc": "Parameter",
-    "parent": "GENERIC",
-    "properties": [
-     {
-      "name": "name",
-      "value": "indexParam",
       "type": "Id"
      },
      {
@@ -1757,6 +1701,52 @@
       "name": "parameterViewRole",
       "value": "unused",
       "type": "parameterViewRoleCustom"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "74080818-cdc6-47f8-9b4a-e570ffad3e01",
+    "type": "ComponentsJavascriptParameter",
+    "typeDesc": "Custom Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "historyParam",
+      "type": "Id"
+     },
+     {
+      "name": "javaScript",
+      "value": "[]",
+      "type": "JavaScript"
+     },
+     {
+      "name": "bookmarkable",
+      "value": "false",
+      "type": "Boolean"
+     }
+    ]
+   },
+   {
+    "id": "bd98b392-1982-ccd0-6e3e-f6c7943a99b9",
+    "type": "ComponentsJavascriptParameter",
+    "typeDesc": "Custom Parameter",
+    "parent": "GENERIC",
+    "properties": [
+     {
+      "name": "name",
+      "value": "indexParam",
+      "type": "Id"
+     },
+     {
+      "name": "javaScript",
+      "value": "-1",
+      "type": "JavaScript"
      },
      {
       "name": "bookmarkable",
@@ -1807,7 +1797,7 @@
      },
      {
       "name": "priority",
-      "value": "1",
+      "value": "2",
       "type": "Integer"
      },
      {
@@ -1832,7 +1822,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    var idx = Dashboards.getParameterValue('${p:indexParam}'),\n        history = Dashboards.getParameterValue('${p:historyParam}');\n        \n    Dashboards.setParameter( this.parameter, history[idx].filename);\n}",
+      "value": "function f(){\n    var idx = Dashboards.getParameterValue('${p:indexParam}'),\n        history = Dashboards.getParameterValue('${p:historyParam}');\n    \n    if ( !_.isEmpty(history) && history[idx] && history[idx].filename ){\n        Dashboards.setParameter( this.parameter, history[idx].filename);\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -1905,7 +1895,7 @@
      },
      {
       "name": "priority",
-      "value": 5,
+      "value": "1",
       "type": "Integer"
      },
      {
@@ -1925,7 +1915,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    var idx = Dashboards.getParameterValue('${p:indexParam}'),\n        history = Dashboards.getParameterValue('${p:historyParam}');\n        \n    Dashboards.setParameter( this.parameter, history[idx].root);\n}",
+      "value": "function f(){\n    var idx = Dashboards.getParameterValue('${p:indexParam}'),\n        history = Dashboards.getParameterValue('${p:historyParam}');\n    \n    if ( !_.isEmpty(history) && history[idx] && history[idx].root ){\n        Dashboards.setParameter( this.parameter, history[idx].root);\n    }\n}",
       "type": "JavaScript"
      },
      {
@@ -1945,7 +1935,7 @@
      },
      {
       "name": "postChange",
-      "value": "function f(){\n    var history = Dashboards.getParameterValue('${p:historyParam}'),\n        idx = Dashboards.getParameterValue('${p:indexParam}'),\n        root = Dashboards.getParameterValue( this.parameter ),\n        file = '';\n        \n    Dashboards.fireChange('${p:filenameParam}', file);\n        \n    history = history.slice(0, idx+1);\n    history.push({\n        root: root,\n        filename: file,\n        url: root + file\n    });\n            \n    Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n    Dashboards.setParameter( '${p:historyParam}' , history );\n    Dashboards.fireChange( '${p:updateEvent}', '1');\n}",
+      "value": "function f(){\n    var history = Dashboards.getParameterValue('${p:historyParam}'),\n        idx = Dashboards.getParameterValue('${p:indexParam}'),\n        root = Dashboards.getParameterValue( this.parameter ),\n        file = '/';\n        \n    Dashboards.fireChange('${p:filenameParam}', file);\n        \n    history = history.slice(0, idx+1);\n    history.push({\n        root: root,\n        filename: file,\n        url: root + file\n    });\n            \n    Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n    Dashboards.setParameter( '${p:historyParam}' , history );\n    Dashboards.fireChange( '${p:updateEvent}', '1');\n}",
       "type": "JavaScript"
      },
      {
@@ -2231,7 +2221,7 @@
      },
      {
       "name": "expression",
-      "value": "function f(){\n    if ( !$('#' + this.htmlObject).hasClass('disabled')){\n        var history = Dashboards.getParameterValue('${p:historyParam}'),\n            idx = Dashboards.getParameterValue('${p:indexParam}'),\n            parsedFileArray = _.without( history[idx].filename.split('/') , \"\" );\n        parsedFileArray.unshift(\"\");\n        var newFile = _.initial( parsedFileArray ).join('/'),\n            root = Dashboards.getParameterValue('${p:rootParam}');\n        history = history.slice(0, idx+1);\n        history.push( { \n            root: root,\n            filename: newFile,\n            url: root + newFile\n        });\n            \n        Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n        Dashboards.setParameter( '${p:historyParam}' , history );\n        Dashboards.fireChange( '${p:updateEvent}', '1');\n    }\n}\n",
+      "value": "function f(){\n    if ( !$('#' + this.htmlObject).hasClass('disabled')){\n        var history = Dashboards.getParameterValue('${p:historyParam}'),\n            idx = Dashboards.getParameterValue('${p:indexParam}'),\n            parsedFileArray = _.without( history[idx].filename.split('/') , \"\" );\n        var newFile = \"/\" + _.initial( parsedFileArray ).join('/'),\n            root = Dashboards.getParameterValue('${p:rootParam}');\n        history = history.slice(0, idx+1);\n        history.push( { \n            root: root,\n            filename: newFile,\n            url: root + newFile\n        });\n            \n        Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n        Dashboards.setParameter( '${p:historyParam}' , history );\n        Dashboards.fireChange( '${p:updateEvent}', '1');\n    }\n}\n",
       "type": "JavaScript"
      },
      {
@@ -2313,11 +2303,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colHeaders",
-      "value": "[\"Name\",\"Type\",\"Date Modified\",\"Size (bytes)\",\"File path\"]",
-      "type": "Array"
-     },
-     {
       "name": "colTypes",
       "value": "[\"formattedText\",\"formattedText\",\"formattedText\",\"numeric\",\"formattedText\"]",
       "type": "colTypesCustom"
@@ -2348,9 +2333,9 @@
       "type": "ValuesArray"
      },
      {
-      "name": "filter",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colHeaders",
+      "value": "[\"Name\",\"Type\",\"Date Modified\",\"Size (bytes)\",\"File path\"]",
+      "type": "Array"
      },
      {
       "name": "info",
@@ -2383,6 +2368,11 @@
       "type": "Boolean"
      },
      {
+      "name": "filter",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -2398,18 +2388,18 @@
       "value": "filesQuery"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
      },
      {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
+     },
+     {
       "name": "priority",
-      "value": 5,
+      "value": "5",
       "type": "Integer"
      },
      {
@@ -2439,7 +2429,7 @@
      },
      {
       "name": "executeAtStart",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      },
      {
@@ -2569,7 +2559,7 @@
      },
      {
       "name": "javaScript",
-      "value": "Dashboards.on('cdf:preInit' , function (){\n    var first = Dashboards.getParameterValue('${p:filenameParam}'),\n        root = Dashboards.getParameterValue('${p:rootParam}');\n    \n    Dashboards.setParameter('${p:historyParam}', [ {\n        root: root,\n        filename: first,\n        url: root + first\n    } ] );\n    Dashboards.setParameter('${p:indexParam}' , 0 );\n});",
+      "value": "Dashboards.on('cdf:preInit__' , function (){\n    var first = Dashboards.getParameterValue('${p:filenameParam}'),\n        root = Dashboards.getParameterValue('${p:rootParam}');\n    \n    Dashboards.setParameter('${p:historyParam}', [ {\n        root: root,\n        filename: first,\n        url: root + first\n    } ] );\n    Dashboards.setParameter('${p:indexParam}' , 0 );\n});",
       "type": "JavaScript"
      }
     ]
