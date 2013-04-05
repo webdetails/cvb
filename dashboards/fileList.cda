@@ -3,7 +3,7 @@
    <DataSources>
       <Connection id="filesQuery" type="kettle.TransFromFile">
          <KtrFile>../endpoints/kettle/listFiles.ktr</KtrFile>
-         <variables datarow-name="urlParam" variable-name="URL"/>
+         <variables datarow-name="uri" variable-name="URI"/>
       </Connection>
       <Connection id="locationsQuery" type="kettle.TransFromFile">
          <KtrFile>../endpoints/kettle/getLocations.ktr</KtrFile>
@@ -14,7 +14,7 @@
                type="kettle">
       <Columns/>
       <Parameters>
-         <Parameter default="hdfs://admin1.mango.metrics.scl3.mozilla.com:8020" name="urlParam"
+         <Parameter default="hdfs://admin1.mango.metrics.scl3.mozilla.com:8020" name="uri"
                     type="String"/>
       </Parameters>
       <Query>OUTPUT</Query>

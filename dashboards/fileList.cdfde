@@ -1875,7 +1875,7 @@
      },
      {
       "name": "valueAsId",
-      "value": "true",
+      "value": "false",
       "type": "Boolean"
      },
      {
@@ -2303,11 +2303,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colTypes",
-      "value": "[\"formattedText\",\"formattedText\",\"formattedText\",\"numeric\",\"formattedText\"]",
-      "type": "colTypesCustom"
-     },
-     {
       "name": "colFormats",
       "value": "[]",
       "type": "Array"
@@ -2338,9 +2333,9 @@
       "type": "Array"
      },
      {
-      "name": "info",
-      "value": "false",
-      "type": "Boolean"
+      "name": "colTypes",
+      "value": "[\"formattedText\",\"formattedText\",\"formattedText\",\"numeric\",\"formattedText\"]",
+      "type": "colTypesCustom"
      },
      {
       "name": "sort",
@@ -2373,6 +2368,11 @@
       "type": "Boolean"
      },
      {
+      "name": "info",
+      "value": "false",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -2388,14 +2388,14 @@
       "value": "filesQuery"
      },
      {
-      "name": "sortBy",
-      "value": "[]",
-      "type": "SortByArray"
-     },
-     {
       "name": "sDom",
       "value": "",
       "type": "JavaScript"
+     },
+     {
+      "name": "sortBy",
+      "value": "[]",
+      "type": "SortByArray"
      },
      {
       "name": "priority",
@@ -2434,7 +2434,7 @@
      },
      {
       "name": "preExecution",
-      "value": "function f(){\n    \n    this.custom = this.custom || {};\n    \n        \n    if ( !this.custom.initializedAddIns){\n        var method = 'downloadFile',\n            pluginPath = _.initial( window.location.pathname.split('/') ).join('/'),\n            downloadLink = window.location.protocol + '//' + window.location.host \n                + pluginPath + '/' + method;\n        \n        this.setAddInOptions( 'colType' , 'formattedText', function (st){\n            var out = {};\n            if ( st.colIdx == 4 ){\n                out.textFormat = function (v, st){\n                    var root = Dashboards.getParameterValue('${p:rootParam}');\n                    var $container = $('<div/>').addClass('downloadContainer'),\n                        $link = $('<div/>').addClass('link').text( v.replace(root,\"\") ),\n                        $action = $('<div/>').addClass('action')\n                            .text( ( st.tableData[st.rowIdx][1] === 'file') ?\n                                \"Click to Download\" : \"Click to Open\" \n                            );\n                    $container.append( $link, $action);\n                    if ( st.tableData[st.rowIdx][1] === 'file' ) {\n                        \n                        var $urlCopy = $('<div/>').addClass('urlCopy WDhidden')\n                                .append( $('<textarea/>')\n                                    .text( downloadLink +  $.param({\n                                        \"paramfilename\": v , \n                                        \"download\": true,\n                                        \"kettleOutput\": \"ResultFiles\" }))\n                                    .attr({ readonly: \"readonly\"}))\n                                .focusout( function (){\n                                    $urlCopy.addClass('WDhidden');\n                                    $link.removeClass('WDhidden');\n                                    $action.removeClass('WDhidden');\n                                })\n                                .click( function(e){\n                                    e.stopPropagation();\n                                });\n                                \n                        var $urlButton = $('<div/>').addClass('urlButton')\n                                .append( $('<button/>').text('URL')\n                                    .click( function(e){\n                                        $urlCopy.find('textarea').focus();\n                                        $urlCopy.toggleClass('WDhidden');\n                                        $link.toggleClass('WDhidden');\n                                        $action.toggleClass('WDhidden');\n                                        \n                                        e.stopPropagation();\n                                    }));\n                        $container.prepend( $urlButton );\n                        $container.append( $urlCopy );\n                    }\n                    return $container;\n                };\n            }\n            return out;\n        });\n        this.custom.initializedAddIns = true;\n    }\n    \n    \n    var idx = Dashboards.getParameterValue('${p:indexParam}'),\n        history = Dashboards.getParameterValue('${p:historyParam}');\n    this.parameters = [ [ 'urlParam', \"'\" + history[idx].url + \"'\" ] ];\n    \n    \n}",
+      "value": "function f(){\n    \n    this.custom = this.custom || {};\n    \n        \n    if ( !this.custom.initializedAddIns){\n        var method = 'downloadFile',\n            pluginPath = _.initial( window.location.pathname.split('/') ).join('/'),\n            downloadLink = window.location.protocol + '//' + window.location.host \n                + pluginPath + '/' + method;\n        \n        this.setAddInOptions( 'colType' , 'formattedText', function (st){\n            var out = {};\n            if ( st.colIdx == 4 ){\n                out.textFormat = function (v, st){\n                    var root = Dashboards.getParameterValue('${p:rootParam}');\n                    var $container = $('<div/>').addClass('downloadContainer'),\n                        $link = $('<div/>').addClass('link').text( v.replace(root,\"\") ),\n                        $action = $('<div/>').addClass('action')\n                            .text( ( st.tableData[st.rowIdx][1] === 'file') ?\n                                \"Click to Download\" : \"Click to Open\" \n                            );\n                    $container.append( $link, $action);\n                    if ( st.tableData[st.rowIdx][1] === 'file' ) {\n                        \n                        var $urlCopy = $('<div/>').addClass('urlCopy WDhidden')\n                                .append( $('<textarea/>')\n                                    .text( downloadLink +  $.param({\n                                        \"paramURI\": v , \n                                        \"download\": true,\n                                        \"kettleOutput\": \"ResultFiles\" }))\n                                    .attr({ readonly: \"readonly\"}))\n                                .focusout( function (){\n                                    $urlCopy.addClass('WDhidden');\n                                    $link.removeClass('WDhidden');\n                                    $action.removeClass('WDhidden');\n                                })\n                                .click( function(e){\n                                    e.stopPropagation();\n                                });\n                                \n                        var $urlButton = $('<div/>').addClass('urlButton')\n                                .append( $('<button/>').text('URL')\n                                    .click( function(e){\n                                        $urlCopy.find('textarea').focus();\n                                        $urlCopy.toggleClass('WDhidden');\n                                        $link.toggleClass('WDhidden');\n                                        $action.toggleClass('WDhidden');\n                                        \n                                        e.stopPropagation();\n                                    }));\n                        $container.prepend( $urlButton );\n                        $container.append( $urlCopy );\n                    }\n                    return $container;\n                };\n            }\n            return out;\n        });\n        this.custom.initializedAddIns = true;\n    }\n    \n    \n    var idx = Dashboards.getParameterValue('${p:indexParam}'),\n        history = Dashboards.getParameterValue('${p:historyParam}');\n    this.parameters = [ [ 'uri', \"'\" + history[idx].url + \"'\" ] ];\n    \n    \n}",
       "type": "JavaScript"
      },
      {
@@ -2469,7 +2469,7 @@
      },
      {
       "name": "cccClickAction",
-      "value": "function f(st){\n    var myself = this,\n        fileType = st.tableData[st.rowIdx][1],\n        url = st.tableData[st.rowIdx][4];\n    \n    var method = 'downloadFile',\n        pluginPath = _.initial( window.location.pathname.split('/') ).join('/'),\n        downloadLink = pluginPath + '/' + method;\n\n    if ( fileType === 'folder' ){\n        var history = Dashboards.getParameterValue('${p:historyParam}'),\n            idx = Dashboards.getParameterValue('${p:indexParam}'),\n            root = Dashboards.getParameterValue('${p:rootParam}');\n        history = history.slice(0,idx+1);\n        history.push({\n            root: root,\n            filename: url.replace( root, \"\"),\n            url: url\n        });\n    \n        Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n        Dashboards.setParameter( '${p:historyParam}' , history );\n        Dashboards.fireChange( '${p:updateEvent}', '1');\n    } else if ( fileType === 'file' ){\n       Dashboards.log( 'Download File: ' + url);\n       var _exportIframe = $('<iframe style=\"display:none\">');\n           _exportIframe.detach();\n           _exportIframe[0].src = downloadLink + '?' + \n                $.param({\n                    \"paramfilename\": url , \n                    \"download\": true,\n                    \"kettleOutput\": \"ResultFiles\" });\n           _exportIframe.appendTo($('body'));\n           \n           var method = 'downloadFile',\n            pluginPath = _.initial( window.location.pathname.split('/') ).join('/'),\n            downloadLink = window.location.protocol + '//' + window.location.host \n                + pluginPath + '/' + method + $.param({\n                    \"paramfilename\": url , \n                    \"download\": true,\n                    \"kettleOutput\": \"ResultFiles\" });;\n           \n         /* Dashboards.fireChange('${p:downloadLinkParam}' , downloadLink );\n           this.handleExpandOnClick(st);*/\n    }\n    \n\n}",
+      "value": "function f(st){\n    var myself = this,\n        fileType = st.tableData[st.rowIdx][1],\n        url = st.tableData[st.rowIdx][4];\n    \n    var method = 'downloadFile',\n        pluginPath = _.initial( window.location.pathname.split('/') ).join('/'),\n        downloadLink = pluginPath + '/' + method;\n\n    if ( fileType === 'folder' ){\n        var history = Dashboards.getParameterValue('${p:historyParam}'),\n            idx = Dashboards.getParameterValue('${p:indexParam}'),\n            root = Dashboards.getParameterValue('${p:rootParam}');\n        history = history.slice(0,idx+1);\n        history.push({\n            root: root,\n            filename: url.replace( root, \"\"),\n            url: url\n        });\n    \n        Dashboards.setParameter( '${p:indexParam}' , idx + 1 );\n        Dashboards.setParameter( '${p:historyParam}' , history );\n        Dashboards.fireChange( '${p:updateEvent}', '1');\n    } else if ( fileType === 'file' ){\n       Dashboards.log( 'Download File: ' + url);\n       var _exportIframe = $('<iframe style=\"display:none\">');\n           _exportIframe.detach();\n           _exportIframe[0].src = downloadLink + '?' + \n                $.param({\n                    \"paramURI\": url , \n                    \"download\": true,\n                    \"kettleOutput\": \"ResultFiles\" });\n           _exportIframe.appendTo($('body'));\n           \n           var method = 'downloadFile',\n            pluginPath = _.initial( window.location.pathname.split('/') ).join('/'),\n            downloadLink = window.location.protocol + '//' + window.location.host \n                + pluginPath + '/' + method + $.param({\n                    \"paramURI\": url , \n                    \"download\": true,\n                    \"kettleOutput\": \"ResultFiles\" });;\n           \n         /* Dashboards.fireChange('${p:downloadLinkParam}' , downloadLink );\n           this.handleExpandOnClick(st);*/\n    }\n    \n\n}",
       "type": "JavaScript"
      }
     ]
@@ -2613,12 +2613,12 @@
      },
      {
       "name": "variables",
-      "value": "[[\"urlParam\",\"URL\"]]",
+      "value": "[[\"uri\",\"URI\"]]",
       "type": "ValuesArray"
      },
      {
       "name": "parameters",
-      "value": "[[\"urlParam\",\"hdfs://admin1.mango.metrics.scl3.mozilla.com:8020\",\"String\",\"\"]]",
+      "value": "[[\"uri\",\"hdfs://admin1.mango.metrics.scl3.mozilla.com:8020\",\"String\",\"\"]]",
       "type": "CdaParameters"
      },
      {
@@ -2643,7 +2643,7 @@
      },
      {
       "name": "cacheDuration",
-      "value": 3600,
+      "value": "3600",
       "type": "Integer"
      },
      {
