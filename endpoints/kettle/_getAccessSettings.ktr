@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <transformation>
   <info>
-    <name>getLocations</name>
+    <name>_getAccessSettings</name>
     <description/>
     <extended_description/>
     <trans_version/>
@@ -62,16 +62,16 @@
     <clusterschemas>
     </clusterschemas>
   <created_user>-</created_user>
-  <created_date>2012&#47;04&#47;12 11:35:17.691</created_date>
+  <created_date>2013&#47;04&#47;05 11:55:36.745</created_date>
   <modified_user>-</modified_user>
-  <modified_date>2012&#47;04&#47;12 11:35:17.691</modified_date>
+  <modified_date>2013&#47;04&#47;05 11:55:36.745</modified_date>
   </info>
   <notepads>
   </notepads>
   <order>
-  <hop> <from>Get data from XML</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  </order>
+  <hop> <from>Filter Access Types</from><to>Discard Invalid Types</to><enabled>Y</enabled> </hop>  <hop> <from>Get data from XML</from><to>Filter Access Types</to><enabled>Y</enabled> </hop>  <hop> <from>Filter Access Types</from><to>Mapping output specification</to><enabled>Y</enabled> </hop>  <hop> <from>Mapping input specification</from><to>Get data from XML</to><enabled>Y</enabled> </hop>  </order>
   <step>
-    <name>OUTPUT</name>
+    <name>Discard Invalid Types</name>
     <type>Dummy</type>
     <description/>
     <distribute>Y</distribute>
@@ -82,8 +82,48 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>370</xloc>
-      <yloc>89</yloc>
+      <xloc>343</xloc>
+      <yloc>313</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter Access Types</name>
+    <type>FilterRows</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+<send_true_to>Mapping output specification</send_true_to>
+<send_false_to>Discard Invalid Types</send_false_to>
+    <compare>
+<condition>
+ <negated>N</negated>
+ <conditions>
+  <condition>
+   <negated>N</negated>
+   <leftvalue>_accessType</leftvalue>
+   <function>=</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>allow</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  <condition>
+   <negated>N</negated>
+   <operator>OR</operator>
+   <leftvalue>_accessType</leftvalue>
+   <function>=</function>
+   <rightvalue/>
+   <value><name>constant</name><type>String</type><text>deny</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
+  </conditions>
+ </condition>
+    </compare>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>456</xloc>
+      <yloc>313</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -100,7 +140,7 @@
            </partitioning>
     <include>N</include>
     <include_field/>
-    <rownum>N</rownum>
+    <rownum>Y</rownum>
     <addresultfile>N</addresultfile>
     <namespaceaware>N</namespaceaware>
     <ignorecomments>N</ignorecomments>
@@ -121,7 +161,7 @@
     <fields>
       <field>
         <name>_topLevel</name>
-        <xpath>@topLevel</xpath>
+        <xpath>..&#47;@topLevel</xpath>
         <element_type>attribut</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
@@ -135,9 +175,24 @@
         <repeat>N</repeat>
       </field>
       <field>
-        <name>_topLevelName</name>
-        <xpath>@name</xpath>
+        <name>_accessType</name>
+        <xpath>@type</xpath>
         <element_type>attribut</element_type>
+        <result_type>valueof</result_type>
+        <type>String</type>
+        <format/>
+        <currency/>
+        <decimal/>
+        <group/>
+        <length>-1</length>
+        <precision>-1</precision>
+        <trim_type>none</trim_type>
+        <repeat>N</repeat>
+      </field>
+      <field>
+        <name>_accessPattern</name>
+        <xpath>.</xpath>
+        <element_type>node</element_type>
         <result_type>valueof</result_type>
         <type>String</type>
         <format/>
@@ -151,7 +206,7 @@
       </field>
     </fields>
     <limit>0</limit>
-    <loopxpath>&#47;cvbConfig&#47;vfsLocations&#47;vfsLocation</loopxpath>
+    <loopxpath>&#47;cvbConfig&#47;vfsLocations&#47;vfsLocation&#47;access</loopxpath>
     <IsInFields>N</IsInFields>
     <IsAFile>Y</IsAFile>
     <XmlField>settingsFile</XmlField>
@@ -166,8 +221,47 @@
     <sizeFieldName/>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>237</xloc>
-      <yloc>88</yloc>
+      <xloc>455</xloc>
+      <yloc>237</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Mapping output specification</name>
+    <type>MappingOutput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>456</xloc>
+      <yloc>427</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Mapping input specification</name>
+    <type>MappingInput</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>
+        <select_unspecified>N</select_unspecified>
+    </fields>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>452</xloc>
+      <yloc>139</yloc>
       <draw>Y</draw>
       </GUI>
     </step>

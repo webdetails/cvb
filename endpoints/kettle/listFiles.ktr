@@ -10,8 +10,8 @@
     <directory>&#47;</directory>
     <parameters>
         <parameter>
-            <name>URL</name>
-            <default_value/>
+            <name>URI</name>
+            <default_value>file:&#47;&#47;</default_value>
             <description/>
         </parameter>
     </parameters>
@@ -74,117 +74,12 @@
   <notepads>
   </notepads>
   <order>
-  <hop> <from>Get File Names</from><to>Sort rows</to><enabled>Y</enabled> </hop>  <hop> <from>Select values</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  <hop> <from>Sort rows</from><to>Select values</to><enabled>Y</enabled> </hop>  <hop> <from>Wildcard</from><to>Get Variables</to><enabled>Y</enabled> </hop>  <hop> <from>Get Variables</from><to>Write to log</to><enabled>Y</enabled> </hop>  <hop> <from>Write to log</from><to>Get File Names</to><enabled>Y</enabled> </hop>  <hop> <from>XML Input Stream (StAX)</from><to>Filter rows</to><enabled>N</enabled> </hop>  <hop> <from>Filter rows</from><to>Select values 2</to><enabled>N</enabled> </hop>  <hop> <from>Filter rows</from><to>Dummy (do nothing)</to><enabled>N</enabled> </hop>  <hop> <from>Write to log</from><to>Data Validator</to><enabled>N</enabled> </hop>  <hop> <from>Select values 2</from><to>Data Validator</to><enabled>N</enabled> </hop>  </order>
-  <step>
-    <name>Data Validator</name>
-    <type>Validator</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<validate_all>N</validate_all>
-<concat_errors>N</concat_errors>
-<concat_separator>|</concat_separator>
-       <validator_field><name>urlParam</name>
-<validation_name>validateURL</validation_name>
-<max_length/>
-<min_length/>
-<null_allowed>N</null_allowed>
-<only_null_allowed>N</only_null_allowed>
-<only_numeric_allowed>N</only_numeric_allowed>
-<data_type>String</data_type>
-<data_type_verified>Y</data_type_verified>
-<conversion_mask/>
-<decimal_symbol/>
-<grouping_symbol/>
-<max_value/>
-<min_value/>
-<start_string/>
-<end_string/>
-<start_string_not_allowed/>
-<end_string_not_allowed/>
-<regular_expression/>
-<regular_expression_not_allowed/>
-<error_code/>
-<error_description/>
-<is_sourcing_values>Y</is_sourcing_values>
-<sourcing_step>Select values 2</sourcing_step>
-<sourcing_field>xml_data_value</sourcing_field>
-<allowed_value></allowed_value></validator_field>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>463</xloc>
-      <yloc>236</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Dummy (do nothing)</name>
-    <type>Dummy</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>261</xloc>
-      <yloc>447</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Filter rows</name>
-    <type>FilterRows</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-<send_true_to>Select values 2</send_true_to>
-<send_false_to>Dummy (do nothing)</send_false_to>
-    <compare>
-<condition>
- <negated>N</negated>
- <conditions>
-  <condition>
-   <negated>N</negated>
-   <leftvalue>xml_data_type_description</leftvalue>
-   <function>=</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>ATTRIBUTE</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  <condition>
-   <negated>N</negated>
-   <operator>AND</operator>
-   <leftvalue>xml_data_name</leftvalue>
-   <function>=</function>
-   <rightvalue/>
-   <value><name>constant</name><type>String</type><text>tophead</text><length>-1</length><precision>-1</precision><isnull>N</isnull><mask/></value>   </condition>
-  </conditions>
- </condition>
-    </compare>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>261</xloc>
-      <yloc>345</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
+  <hop> <from>Select Table Columns</from><to>OUTPUT</to><enabled>Y</enabled> </hop>  <hop> <from>Validate Files</from><to>Select Table Columns</to><enabled>Y</enabled> </hop>  <hop> <from>get File Parameter</from><to>wildcard</to><enabled>Y</enabled> </hop>  <hop> <from>wildcard</from><to>Get File Names</to><enabled>Y</enabled> </hop>  <hop> <from>Get File Names</from><to>Remove aux fields</to><enabled>Y</enabled> </hop>  <hop> <from>Remove aux fields</from><to>Validate Files</to><enabled>Y</enabled> </hop>  </order>
   <step>
     <name>Get File Names</name>
     <type>GetFileNames</type>
     <description/>
-    <distribute>Y</distribute>
+    <distribute>N</distribute>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
@@ -195,16 +90,16 @@
     </filter>
     <doNotFailIfNoFile>N</doNotFailIfNoFile>
     <rownum>N</rownum>
-    <isaddresult>Y</isaddresult>
+    <isaddresult>N</isaddresult>
     <filefield>Y</filefield>
     <rownum_field/>
-    <filename_Field>urlParam</filename_Field>
-    <wildcard_Field>wildcard</wildcard_Field>
+    <filename_Field>_baseUri</filename_Field>
+    <wildcard_Field>_wildcard</wildcard_Field>
     <exclude_wildcard_Field/>
     <dynamic_include_subfolders>N</dynamic_include_subfolders>
     <limit>0</limit>
     <file>
-      <name>${URL}</name>
+      <name>${URI}</name>
       <filemask>.*</filemask>
       <exclude_filemask/>
       <file_required>N</file_required>
@@ -212,40 +107,8 @@
     </file>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>550</xloc>
-      <yloc>141</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Get Variables</name>
-    <type>GetVariable</type>
-    <description/>
-    <distribute>N</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>
-      <field>
-        <name>urlParam</name>
-        <variable>${URL}</variable>
-        <type>String</type>
-        <format/>
-        <currency/>
-        <decimal/>
-        <group/>
-        <length>-1</length>
-        <precision>-1</precision>
-        <trim_type>none</trim_type>
-      </field>
-    </fields>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>192</xloc>
-      <yloc>141</yloc>
+      <xloc>206</xloc>
+      <yloc>121</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -262,14 +125,35 @@
            </partitioning>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>1016</xloc>
-      <yloc>141</yloc>
+      <xloc>599</xloc>
+      <yloc>121</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Select values</name>
+    <name>Remove aux fields</name>
+    <type>SelectValues</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <fields>        <select_unspecified>N</select_unspecified>
+      <remove>        <name>_baseUri</name>
+      </remove>      <remove>        <name>_wildcard</name>
+      </remove>    </fields>     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>303</xloc>
+      <yloc>122</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Select Table Columns</name>
     <type>SelectValues</type>
     <description/>
     <distribute>Y</distribute>
@@ -299,117 +183,60 @@
         <length>-2</length>
         <precision>-2</precision>
       </field>        <select_unspecified>N</select_unspecified>
-      <meta>        <name>lastmodifiedtime</name>
-        <rename>lastmodifiedtime</rename>
-        <type>String</type>
-        <length>-2</length>
-        <precision>-2</precision>
-        <conversion_mask>yyyy-MM-dd HH:mm:ss</conversion_mask>
-        <date_format_lenient>false</date_format_lenient>
-        <encoding/>
-        <decimal_symbol/>
-        <grouping_symbol/>
-        <currency_symbol/>
-        <storage_type/>
-      </meta>    </fields>     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>866</xloc>
-      <yloc>141</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Select values 2</name>
-    <type>SelectValues</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <fields>      <field>        <name>xml_data_type_description</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>xml_element_id</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>xml_parent_element_id</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>xml_element_level</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>xml_path</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>xml_parent_path</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>xml_data_name</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>      <field>        <name>xml_data_value</name>
-        <rename/>
-        <length>-2</length>
-        <precision>-2</precision>
-      </field>        <select_unspecified>N</select_unspecified>
     </fields>     <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>390</xloc>
-      <yloc>345</yloc>
+      <xloc>500</xloc>
+      <yloc>121</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Sort rows</name>
-    <type>SortRows</type>
+    <name>Validate Files</name>
+    <type>Mapping</type>
     <description/>
-    <distribute>N</distribute>
+    <distribute>Y</distribute>
     <copies>1</copies>
          <partitioning>
            <method>none</method>
            <schema_name/>
            </partitioning>
-      <directory>%%java.io.tmpdir%%</directory>
-      <prefix>out</prefix>
-      <sort_size>1000000</sort_size>
-      <free_memory/>
-      <compress>N</compress>
-      <compress_variable/>
-      <unique_rows>N</unique_rows>
-    <fields>
-      <field>
-        <name>type</name>
-        <ascending>N</ascending>
-        <case_sensitive>N</case_sensitive>
-      </field>
-      <field>
-        <name>short_filename</name>
-        <ascending>Y</ascending>
-        <case_sensitive>N</case_sensitive>
-      </field>
-    </fields>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>${Internal.Transformation.Filename.Directory}&#47;_validateFiles.ktr</filename>
+    <directory_path/>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
+    <description/>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>712</xloc>
-      <yloc>141</yloc>
+      <xloc>402</xloc>
+      <yloc>121</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Wildcard</name>
-    <type>RowGenerator</type>
+    <name>get File Parameter</name>
+    <type>GetVariable</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -419,29 +246,29 @@
            </partitioning>
     <fields>
       <field>
-        <name>wildcard</name>
+        <name>_baseUri</name>
+        <variable>${URI}</variable>
         <type>String</type>
         <format/>
         <currency/>
         <decimal/>
         <group/>
-        <nullif>.*</nullif>
         <length>-1</length>
         <precision>-1</precision>
+        <trim_type>none</trim_type>
       </field>
     </fields>
-    <limit>1</limit>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>26</xloc>
-      <yloc>141</yloc>
+      <xloc>51</xloc>
+      <yloc>122</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
 
   <step>
-    <name>Write to log</name>
-    <type>WriteToLog</type>
+    <name>wildcard</name>
+    <type>Janino</type>
     <description/>
     <distribute>Y</distribute>
     <copies>1</copies>
@@ -449,73 +276,17 @@
            <method>none</method>
            <schema_name/>
            </partitioning>
-      <loglevel>log_level_basic</loglevel>
-      <displayHeader>Y</displayHeader>
-      <logmessage>Getting file list for </logmessage>
-    <fields>
-      <field>
-        <name>urlParam</name>
-        </field>
-      <field>
-        <name>wildcard</name>
-        </field>
-      </fields>
+       <formula><field_name>_wildcard</field_name>
+<formula_string>&quot;.*&quot;</formula_string>
+<value_type>String</value_type>
+<value_length>-1</value_length>
+<value_precision>-1</value_precision>
+<replace_field/>
+</formula>
      <cluster_schema/>
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>362</xloc>
-      <yloc>141</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>XML Input Stream (StAX)</name>
-    <type>XMLInputStream</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <filename>${Internal.Transformation.Filename.Directory}&#47;..&#47;..&#47;cvb.xml</filename>
-    <addResultFile>N</addResultFile>
-    <nrRowsToSkip>0</nrRowsToSkip>
-    <rowLimit>0</rowLimit>
-    <defaultStringLen>1024</defaultStringLen>
-    <encoding>UTF-8</encoding>
-    <enableNamespaces>N</enableNamespaces>
-    <enableTrim>Y</enableTrim>
-    <includeFilenameField>N</includeFilenameField>
-    <filenameField>xml_filename</filenameField>
-    <includeRowNumberField>N</includeRowNumberField>
-    <rowNumberField>xml_row_number</rowNumberField>
-    <includeDataTypeNumericField>N</includeDataTypeNumericField>
-    <dataTypeNumericField>xml_data_type_numeric</dataTypeNumericField>
-    <includeDataTypeDescriptionField>Y</includeDataTypeDescriptionField>
-    <dataTypeDescriptionField>xml_data_type_description</dataTypeDescriptionField>
-    <includeXmlLocationLineField>N</includeXmlLocationLineField>
-    <xmlLocationLineField>xml_location_line</xmlLocationLineField>
-    <includeXmlLocationColumnField>N</includeXmlLocationColumnField>
-    <xmlLocationColumnField>xml_location_column</xmlLocationColumnField>
-    <includeXmlElementIDField>Y</includeXmlElementIDField>
-    <xmlElementIDField>xml_element_id</xmlElementIDField>
-    <includeXmlParentElementIDField>Y</includeXmlParentElementIDField>
-    <xmlParentElementIDField>xml_parent_element_id</xmlParentElementIDField>
-    <includeXmlElementLevelField>Y</includeXmlElementLevelField>
-    <xmlElementLevelField>xml_element_level</xmlElementLevelField>
-    <includeXmlPathField>Y</includeXmlPathField>
-    <xmlPathField>xml_path</xmlPathField>
-    <includeXmlParentPathField>Y</includeXmlParentPathField>
-    <xmlParentPathField>xml_parent_path</xmlParentPathField>
-    <includeXmlDataNameField>Y</includeXmlDataNameField>
-    <xmlDataNameField>xml_data_name</xmlDataNameField>
-    <includeXmlDataValueField>Y</includeXmlDataValueField>
-    <xmlDataValueField>xml_data_value</xmlDataValueField>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>82</xloc>
-      <yloc>345</yloc>
+      <xloc>131</xloc>
+      <yloc>122</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
