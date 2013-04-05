@@ -13,7 +13,7 @@
     <parameters>
         <parameter>
             <name>URI</name>
-            <default_value>file:&#47;&#47;&#47;Users&#47;gundisalwa&#47;Desktop&#47;stuff&#47;project-flixmedia-solution&#47;Flixmedia&#47;files&#47;img</default_value>
+            <default_value/>
             <description/>
         </parameter>
     </parameters>
