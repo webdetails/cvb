@@ -2303,11 +2303,6 @@
       "type": "JavaScript"
      },
      {
-      "name": "colFormats",
-      "value": "[]",
-      "type": "Array"
-     },
-     {
       "name": "colWidths",
       "value": "[\"300\",\"50\",\"100\",\"70\",\"400\"]",
       "type": "Array"
@@ -2338,9 +2333,9 @@
       "type": "colTypesCustom"
      },
      {
-      "name": "sort",
-      "value": "true",
-      "type": "Boolean"
+      "name": "colFormats",
+      "value": "[]",
+      "type": "Array"
      },
      {
       "name": "displayLength",
@@ -2373,6 +2368,11 @@
       "type": "Boolean"
      },
      {
+      "name": "sort",
+      "value": "true",
+      "type": "Boolean"
+     },
+     {
       "name": "colSearchable",
       "value": "[]",
       "type": "Array"
@@ -2388,14 +2388,14 @@
       "value": "filesQuery"
      },
      {
-      "name": "sDom",
-      "value": "",
-      "type": "JavaScript"
-     },
-     {
       "name": "sortBy",
       "value": "[]",
       "type": "SortByArray"
+     },
+     {
+      "name": "sDom",
+      "value": "",
+      "type": "JavaScript"
      },
      {
       "name": "priority",
