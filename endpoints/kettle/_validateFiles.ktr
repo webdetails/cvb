@@ -94,6 +94,92 @@
     </step>
 
   <step>
+    <name>Filter Combine Match</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>&#47;&#47;&#47;Users&#47;gundisalwa&#47;Pentaho&#47;project-bare-solution&#47;system&#47;cvb&#47;endpoints&#47;kettle&#47;_filterCombineMatch.ktr</filename>
+    <directory_path/>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
+    <description/>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>639</xloc>
+      <yloc>297</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Filter First Match</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>${Internal.Transformation.Filename.Directory}&#47;_filterFirstMatch.ktr</filename>
+    <directory_path/>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
+    <description/>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>733</xloc>
+      <yloc>220</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
     <name>Filter rows</name>
     <type>FilterRows</type>
     <description/>
@@ -117,6 +203,49 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>465</xloc>
       <yloc>220</yloc>
+      <draw>Y</draw>
+      </GUI>
+    </step>
+
+  <step>
+    <name>Get Settings Data</name>
+    <type>Mapping</type>
+    <description/>
+    <distribute>Y</distribute>
+    <copies>1</copies>
+         <partitioning>
+           <method>none</method>
+           <schema_name/>
+           </partitioning>
+    <specification_method>filename</specification_method>
+    <trans_object_id/>
+    <trans_name/>
+    <filename>${Internal.Transformation.Filename.Directory}&#47;_getAccessSettings.ktr</filename>
+    <directory_path/>
+    <mappings>
+      <input>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>Y</rename_on_output>
+    <description/>
+    </mapping>      </input>
+      <output>
+    <mapping>    <input_step/>
+    <output_step/>
+    <main_path>Y</main_path>
+    <rename_on_output>N</rename_on_output>
+    <description/>
+    </mapping>      </output>
+          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
+    </parameters>
+    </mappings>
+    <allow_multiple_input>N</allow_multiple_input>
+    <allow_multiple_output>N</allow_multiple_output>
+     <cluster_schema/>
+ <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
+      <xloc>231</xloc>
+      <yloc>221</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
@@ -414,135 +543,6 @@
  <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
       <xloc>462</xloc>
       <yloc>304</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Filter First Match</name>
-    <type>Mapping</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <specification_method>filename</specification_method>
-    <trans_object_id/>
-    <trans_name/>
-    <filename>&#47;&#47;&#47;Users&#47;gundisalwa&#47;Pentaho&#47;project-bare-solution&#47;system&#47;cvb&#47;endpoints&#47;kettle&#47;_filterFirstMatch.ktr</filename>
-    <directory_path/>
-    <mappings>
-      <input>
-    <mapping>    <input_step/>
-    <output_step/>
-    <main_path>Y</main_path>
-    <rename_on_output>Y</rename_on_output>
-    <description/>
-    </mapping>      </input>
-      <output>
-    <mapping>    <input_step/>
-    <output_step/>
-    <main_path>Y</main_path>
-    <rename_on_output>N</rename_on_output>
-    <description/>
-    </mapping>      </output>
-          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
-    </parameters>
-    </mappings>
-    <allow_multiple_input>N</allow_multiple_input>
-    <allow_multiple_output>N</allow_multiple_output>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>734</xloc>
-      <yloc>220</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Filter Combine Match</name>
-    <type>Mapping</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <specification_method>filename</specification_method>
-    <trans_object_id/>
-    <trans_name/>
-    <filename>&#47;&#47;&#47;Users&#47;gundisalwa&#47;Pentaho&#47;project-bare-solution&#47;system&#47;cvb&#47;endpoints&#47;kettle&#47;_filterCombineMatch.ktr</filename>
-    <directory_path/>
-    <mappings>
-      <input>
-    <mapping>    <input_step/>
-    <output_step/>
-    <main_path>Y</main_path>
-    <rename_on_output>Y</rename_on_output>
-    <description/>
-    </mapping>      </input>
-      <output>
-    <mapping>    <input_step/>
-    <output_step/>
-    <main_path>Y</main_path>
-    <rename_on_output>N</rename_on_output>
-    <description/>
-    </mapping>      </output>
-          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
-    </parameters>
-    </mappings>
-    <allow_multiple_input>N</allow_multiple_input>
-    <allow_multiple_output>N</allow_multiple_output>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>639</xloc>
-      <yloc>297</yloc>
-      <draw>Y</draw>
-      </GUI>
-    </step>
-
-  <step>
-    <name>Get Settings Data</name>
-    <type>Mapping</type>
-    <description/>
-    <distribute>Y</distribute>
-    <copies>1</copies>
-         <partitioning>
-           <method>none</method>
-           <schema_name/>
-           </partitioning>
-    <specification_method>filename</specification_method>
-    <trans_object_id/>
-    <trans_name/>
-    <filename>${Internal.Transformation.Filename.Directory}&#47;_getAccessSettings.ktr</filename>
-    <directory_path/>
-    <mappings>
-      <input>
-    <mapping>    <input_step/>
-    <output_step/>
-    <main_path>Y</main_path>
-    <rename_on_output>Y</rename_on_output>
-    <description/>
-    </mapping>      </input>
-      <output>
-    <mapping>    <input_step/>
-    <output_step/>
-    <main_path>Y</main_path>
-    <rename_on_output>N</rename_on_output>
-    <description/>
-    </mapping>      </output>
-          <parameters>    <inherit_all_vars>Y</inherit_all_vars>
-    </parameters>
-    </mappings>
-    <allow_multiple_input>N</allow_multiple_input>
-    <allow_multiple_output>N</allow_multiple_output>
-     <cluster_schema/>
- <remotesteps>   <input>   </input>   <output>   </output> </remotesteps>    <GUI>
-      <xloc>231</xloc>
-      <yloc>221</yloc>
       <draw>Y</draw>
       </GUI>
     </step>
