@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<cdf>
-        <title>Second Test</title>
-        <author></author>
-        <description>Second Test</description>
-        <icon/>
-		<style>cpk</style>
-<rendererType>blueprint</rendererType><widget>false</widget></cdf>
