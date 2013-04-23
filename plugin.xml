@@ -4,8 +4,6 @@
 	<static-paths>
 		<static-path url="/cvb/static" localFolder="static"/>
 		<static-path url="/cvb/resources" localFolder="resources"/>
-	<!--	<static-path url="/cdb/overlay" localFolder="overlay"/>
-		<static-path url="/cdb/lang" localFolder="lang"/> -->
 
 	</static-paths>
 	<content-types>
@@ -18,15 +16,4 @@
 
 	<!-- Menu entry -->
 	<menu-items/>
-	<!-- <overlays>
-		<overlay id="startup.dashboardToolbar"  resourcebundle="../content/cvb/static/lang/messages">
-			<overlay id="startup.dashboardToolbar" resourcebundle="../content/cvb/static/lang/messages">
-				<toolbarbutton id="newAnalysisButton" removeelement="false"/>
-				<toolbar id="mainToolbar">
-					<toolbarbutton id="newCDV" image="../content/cvb/static/overlay/cdv_toolbar_icon.png" onclick="mainToolbarHandler.openUrl('${tabName}','${tabName}','content/cdv/home')" tooltiptext="${openNewCDV}" insertafter="newCDBButton"/>
-				</toolbar>
-			</overlay>
-		</overlay>
-	</overlays> -->
-
 </plugin>
