@@ -10,7 +10,7 @@
 		</vfsLocation>
         <vfsLocation name="Home" topLevel="file://">
     		<access type="deny">.*/Applications/*</access>
-    		<access type="allow">/[A-Z].*</access>
+    		<access type="allow">/.*</access>
 		</vfsLocation>
 	</vfsLocations>
 </cvbConfig>
