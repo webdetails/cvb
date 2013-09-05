@@ -17,5 +17,8 @@
 		title="CVB"
 		type="cvb"
 		class="pt.webdetails.cpk.CpkContentGenerator"/>
-	<menu-items/>
+	<!-- Menu entry -->
+	<menu-items>
+		<menu-item id="cvb_main" anchor="tools-submenu" label="CVB" command="content/cvb/" type="MENU_ITEM" how="LAST_CHILD"/>
+	</menu-items>
 </plugin>

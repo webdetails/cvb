@@ -3,4 +3,10 @@
 	<cde-styles>
 		<path>system/cvb/resources/styles</path>
 	</cde-styles>
+  	<cde-datasources/>
+	<cde-components>
+	  <!-- paths from solution with cde component definitions to be loaded-->
+	  <path>system/cvb/resources/components</path>
+	  <path>cvb/components</path>
+	</cde-components>
 </settings>
