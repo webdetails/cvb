@@ -15,7 +15,7 @@
         </elementType>
     </elementTypes> 
     <info>
-        <CPK_version>1</CPK_version>
+        <CPK_version>3</CPK_version>
         <description>Community VFS Browser</description>
         <name>CVB</name>
     </info>
