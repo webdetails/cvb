@@ -4,4 +4,5 @@ bin/
 dist/
 build/
 runtime-lib/
+lib/
 override.properties
